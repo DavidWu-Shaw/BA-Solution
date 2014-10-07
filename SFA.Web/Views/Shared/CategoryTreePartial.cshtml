@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SFA.Web.Helpers.CategoryNode>
+@{
+    string updateTargetId = ViewData["UpdateTargetId"].ToString();
+    string loadingElementId = ViewData["LoadingElementId"].ToString();
+    string ajaxUrlAction = ViewData["AjaxUrlAction"].ToString();
+    string nonAjaxAction = ViewData["NonAjaxAction"].ToString();
+}
+<ul>
+    @foreach (var item in Model)
+    { 
+        <li>
+            @if (item.SubNodes.Count > 0)
+            { 
+                @item.Name
+                @Html.Partial("CategoryTreePartial", item.SubNodes)
+            }
+            else
+            { 
+                @Ajax.ActionLink(item.Name, nonAjaxAction,
+                                 new { id = item.Id },
+                                 new AjaxOptions
+                                 {
+                                     UpdateTargetId = updateTargetId,
+                                     LoadingElementId = loadingElementId,
+                                     Url = Url.Action(ajaxUrlAction, new { id = item.Id })
+                                 })
+            }
+        </li>
+    }
+</ul>

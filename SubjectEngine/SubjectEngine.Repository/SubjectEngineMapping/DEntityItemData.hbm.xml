@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="DEntityItemData" table="tblEntityItem">
+    <id name="Id" column="EntityItemId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Value" type="int" not-null="true">
+      <column name="Value" not-null="true" sql-type="int" />
+    </property>
+
+    <property name="Text" type="string" length="100" not-null="true">
+      <column name="Text" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+    
+    <many-to-one name="Parent" class="DEntityData" column="EntityId"/>
+
+  </class>
+</hibernate-mapping>

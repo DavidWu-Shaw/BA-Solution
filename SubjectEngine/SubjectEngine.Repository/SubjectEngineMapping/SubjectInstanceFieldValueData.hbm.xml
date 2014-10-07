@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="SubjectInstanceFieldValueData" table="tblSubjectInstanceFieldValue">
+    <id name="Id" column="SubjectInstanceFieldValueId" type="int">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+    <property name="SubjectFieldId" type="int" not-null="false">
+      <column name="SubjectFieldId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ValueInt" column="ValueInt" />
+
+    <property name="ValueText" column="ValueText" />
+
+    <property name="ValueDate" column="ValueDate" />
+
+    <many-to-one name="Parent" class="SubjectInstanceData" column="SubjectInstanceId"/>
+
+
+    <!-- [END PROPERTIES] -->
+
+    <!-- [CHILD COLLECTIONS] -->
+    <!-- [END CHILD COLLECTIONS] -->
+  </class>
+</hibernate-mapping>

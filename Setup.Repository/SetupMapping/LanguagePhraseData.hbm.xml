@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Setup.Data" namespace="Setup.Data">
+  <class name="LanguagePhraseData" table="tblLanguagePhrase">
+    <id name="Id" column="LanguagePhraseId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="LanguageId" type="int" not-null="true">
+      <column name="LanguageId" not-null="true" sql-type="int" />
+    </property>
+
+    <property name="PhraseKey" type="string" length="200" not-null="true">
+      <column name="PhraseKey" not-null="true" sql-type="nvarchar" length="200" />
+    </property>
+
+    <property name="PhraseValue" type="string" length="500" not-null="false">
+      <column name="PhraseValue" not-null="false" sql-type="nvarchar" length="500" />
+    </property>
+    <property name="DateModified" type="DateTime" not-null="false">
+      <column name="DateModified" not-null="false" sql-type="datetime" />
+    </property>
+  </class>
+</hibernate-mapping>

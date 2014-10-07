@@ -1,0 +1,69 @@
+﻿@using Framework.Core
+@using SubjectEngine.Component.Dto
+@using SFA.Web.Common
+@using Framework.Core.Helpers
+@using SubjectEngine.Core
+@model SFA.Web.Areas.Admin.Models.InstanceViewModel
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = Model.Subject.GetSubjectLabelByLanguage(Model.CurrentLanguageId) + " Detail";
+}
+<h3>@ViewBag.Title: @Model.Instance.Display</h3>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Instance.Id })
+</p>
+<table>
+    @foreach (var field in Model.Subject.SubjectFields)
+    {
+        if (field.RowIndex > 0 && field.ColIndex > 0)
+        {
+        <tr>
+            <td>
+                @field.GetFieldLabelByLanguage(Model.CurrentLanguageId)
+            </td>
+            <td>
+                @{
+            string textValue = string.Empty;
+            object value = ReflectionHelper.GetValue(Model.Instance, field.FieldKey);
+            if (value != null)
+            {
+                switch (field.DucType)
+                {
+                    case DucTypes.Lookup:
+                    case DucTypes.Pickup:
+                    case DucTypes.Text:
+                    case DucTypes.TextArea:
+                    case DucTypes.Email:
+                    case DucTypes.Formula:
+                    case DucTypes.Integer:
+                    case DucTypes.Number:
+                    case DucTypes.Percentage:
+                        textValue = value.ToString();
+                        break;
+                    case DucTypes.Currency:
+                        textValue = value.ToString();
+                        break;
+                    case DucTypes.Date:
+                        textValue = string.Format(BA.Core.UIConst.DateFormatString, value);
+                        break;
+                    case DucTypes.Datetime:
+                        textValue = string.Format(BA.Core.UIConst.DateTimeFormatString, value);
+                        break;
+                    case DucTypes.Time:
+                        textValue = string.Format(BA.Core.UIConst.TimeFormatString, value);
+                        break;
+                    case DucTypes.Image:
+                        break;
+                    case DucTypes.Attachment:
+                        break;
+                    default:
+                        break;
+                }
+            }
+                }
+                @textValue
+            </td>
+        </tr>
+        }
+    }
+</table>

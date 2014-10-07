@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="SubjectInstanceData" table="tblSubjectInstance">
+    <id name="Id" column="SubjectInstanceId" type="int">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+    <property name="InstanceId" type="int" not-null="false">
+      <column name="InstanceId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="InstanceCreatedDate" column="InstanceCreatedDate" />
+
+    <many-to-one name="Parent" class="SubjectData" column="SubjectId"/>
+
+
+    <!-- [END PROPERTIES] -->
+
+    <!-- [CHILD COLLECTIONS] -->
+
+		<bag name="SubjectInstanceFieldValuesData" cascade="none" inverse="true" lazy="false" >
+			<key>
+				<column name="SubjectInstanceId" not-null="true"/>
+			</key>
+			<one-to-many class="SubjectInstanceFieldValueData"/>
+		</bag>
+
+
+    <!-- [END CHILD COLLECTIONS] -->
+  </class>
+</hibernate-mapping>

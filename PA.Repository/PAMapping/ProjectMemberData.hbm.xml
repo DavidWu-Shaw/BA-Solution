@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="PA.Data" namespace="PA.Data">
+  <class name="ProjectMemberData" table="tblProjectMember">
+    <id name="Id" column="ProjectMemberId" type="int" unsaved-value="-1">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+    <property name="MemberRoleId" column="MemberRoleId" />
+
+    <property name="AllowRead" column="AllowRead" />
+
+    <property name="AllowEdit" column="AllowEdit" />
+
+    <property name="AllowAdd" column="AllowAdd" />
+
+    <property name="AllowDelete" column="AllowDelete" />
+
+    <property name="AllowAdmin" column="AllowAdmin" />
+
+    <many-to-one class="UserData" name="MemberData" column="MemberId" />
+
+    <many-to-one name="Parent" class="ProjectData" column="ProjectId"  not-null="true"/>
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+﻿@using CRM.ShopComponent.Dto
+@model QuoteInfoDto
+@if (!ViewContext.ViewData.ModelState.IsValid)
+{ 
+    <h3>
+        The following errors were found:</h3>
+}
+else
+{ 
+    <h4>
+        Please confirm that following information is correct:</h4>
+    <div class="editor-label">
+        @Html.LabelFor(m => m.Email)
+    </div>
+    <div>@Model.Email</div>
+}

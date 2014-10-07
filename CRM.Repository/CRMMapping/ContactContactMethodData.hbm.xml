@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="ContactContactMethodData" table="tblContactContactMethod">
+    <id name="Id" column="ContactContactMethodId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="ContactMethodTypeId" type="int" not-null="true">
+      <column name="ContactMethodTypeId" not-null="true" sql-type="int" />
+    </property>
+
+    <property name="ContactMethodValue" type="string" length="100" not-null="true">
+      <column name="ContactMethodValue" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+
+    <many-to-one name="Parent" class="ContactData" column="ContactId" not-null="true"/>
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Setup.Data" namespace="Setup.Data">
+  <class name="NotificationTemplateData" table="tblNotificationTemplate">
+
+    <id name="Id" column="NotificationTemplateId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Subject" type="string" length="200" not-null="true">
+      <column name="Subject" not-null="true" sql-type="nvarchar" length="200" />
+    </property>
+
+    <property name="Body" type="StringClob" not-null="true">
+      <column name="Body" not-null="false" sql-type="nvarchar(MAX)" />
+    </property>
+
+    <property name="NotificationTypeId" type="int" not-null="false">
+      <column name="NotificationTypeId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Culture" type="string" length="10" not-null="false">
+      <column name="Culture" not-null="false" sql-type="nvarchar" length="10" />
+    </property>
+
+    <property name="CreatedDate" type="DateTime" length="8" not-null="false">
+      <column name="CreatedDate" not-null="false" sql-type="datetime" length="8" />
+    </property>
+
+    <property name="ModifiedDate" type="DateTime" length="8" not-null="false">
+      <column name="ModifiedDate" not-null="false" sql-type="datetime" length="8" />
+    </property>
+
+  </class>
+</hibernate-mapping>

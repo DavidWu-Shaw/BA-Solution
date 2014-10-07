@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="SubjectChildListData" table="tblSubjectChildList">
+    <id name="Id" column="SubjectChildListId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="ChildListSubjectId" type="int" not-null="false">
+      <column name="ChildListSubjectId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Title" type="string" length="100" not-null="false">
+      <column name="Title" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Sort" type="int" not-null="false">
+      <column name="Sort" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="AllowAdd" type="bool" not-null="false">
+      <column name="AllowAdd" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="AllowEdit" type="bool" not-null="false">
+      <column name="AllowEdit" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="AllowDelete" type="bool" not-null="false">
+      <column name="AllowDelete" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="AllowFiltering" type="bool" not-null="false">
+      <column name="AllowFiltering" not-null="false" sql-type="bit" length="1" />
+    </property>
+    <property name="ImportUrl" type="string" length="100" not-null="false">
+      <column name="ImportUrl" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="AllowImport" type="bool" not-null="false">
+      <column name="AllowImport" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <many-to-one name="Parent" class="SubjectData" column="SubjectId"  not-null="true"/>
+
+    <bag name="SubjectChildListLanguagesData" cascade="all-delete-orphan" inverse="true" >
+      <key>
+        <column name="SubjectChildListId" not-null="true"/>
+      </key>
+      <one-to-many class="SubjectChildListLanguageData"/>
+    </bag>
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+﻿@using SFA.Web.Common
+@using Setup.Component.Dto
+@if (WebContext.Current.ApplicationOption.IsMultiLanguageSupported)
+{
+    foreach (LanguageDto item in WebContext.Current.LanguageDic.Values)
+    {
+    @Html.RouteLink(item.Label,
+                            new
+                            {
+                                culture = item.Culture,
+                                action = ViewContext.RouteData.Values["action"],
+                                controller = ViewContext.RouteData.Values["controller"],
+                                id = ViewContext.RouteData.Values["id"]
+                            },
+                            new { title = string.Format("Switch to {0}", item.Label) }
+                    )
+    @Html.Raw(" ")
+    }
+}

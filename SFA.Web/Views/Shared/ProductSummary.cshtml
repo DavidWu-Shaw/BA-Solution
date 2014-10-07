@@ -1,0 +1,50 @@
+﻿@using SFA.Web.Controllers
+@using CRM.ShopComponent.Dto
+@using SFA.Web.Common
+@model ProductInfoDto
+@{
+    Layout = null;
+}
+<fieldset style="width: 700px; height: 200px; margin: 2px">
+    <div style="float: left; margin: 5px 20px 5px 5px">
+        <a href="@Url.Action(ProductController.DetailAction, ProductController.ControllerName, new { id = Model.ProductId })" title="Click to see detail.">
+            <img height="120" width="120" alt="" src="@Url.Action(ProductController.GetImageAction, ProductController.ControllerName, new { id = Model.ProductId })" />
+        </a>
+    </div>
+    <div style="width: 540px;">
+        <p>
+            @Model.Name
+        </p>
+        <p>
+            @Model.Description
+        </p>
+        <p>
+            @Model.CategoryText
+        </p>
+        <p>
+            @Model.UnitPrice.ToString("c")
+        </p>
+    </div>
+    <div class="clear">
+    </div>
+    @if (WebContext.Current.ApplicationOption.IsQuoteSupported)
+    {
+        <div style="margin: 10px; float: right;">
+            <p class="actionButton">
+                @Html.ActionLink("Quote Request", ProductController.QuoteRequestAction, ProductController.ControllerName, new { id = Model.ProductId }, null)
+            </p>
+        </div>
+    }
+    @if (WebContext.Current.ApplicationOption.IsShoppingSupported)
+    {
+        <div style="margin: 10px; float: right;">
+            @using (Ajax.BeginForm(CartController.AddToCartAction, CartController.ControllerName,
+                                    new AjaxOptions { UpdateTargetId = "cartSummary" }))
+            {
+                @Html.Hidden("productId", Model.ProductId)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                <input type="submit" value="Add To Cart" class="actionButton" />
+            }
+        </div>
+    }
+</fieldset>

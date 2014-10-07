@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4276e9c4-4b64-4a03-8e2d-7eba4de48345" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/TelerikTest/WebServices/ProductService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ProductService.wsdl" MetadataType="Wsdl" ID="7c40eb60-7882-42cc-ba7e-b1efaa423c4b" SourceId="1" SourceUrl="http://localhost/TelerikTest/WebServices/ProductService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ProductService1.wsdl" MetadataType="Wsdl" ID="8b37d50c-3919-4d67-b43e-caa9b8e97e0b" SourceId="1" SourceUrl="http://localhost/TelerikTest/WebServices/ProductService.svc?wsdl" />
+    <MetadataFile FileName="ProductService1.xsd" MetadataType="Schema" ID="81b2a9ae-72c0-4d92-a652-330ab0f4cb9e" SourceId="1" SourceUrl="http://localhost/TelerikTest/WebServices/ProductService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ProductService.disco" MetadataType="Disco" ID="2784a106-53db-4730-92b9-0e3b6187d95f" SourceId="1" SourceUrl="http://localhost/TelerikTest/WebServices/ProductService.svc?disco" />
+    <MetadataFile FileName="ProductService2.xsd" MetadataType="Schema" ID="eeee9a4b-9bd4-49e9-8c9b-2b14ea1e4a27" SourceId="1" SourceUrl="http://localhost/TelerikTest/WebServices/ProductService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ProductService3.xsd" MetadataType="Schema" ID="2794e3d1-33e7-4c3c-a045-97f88bc66fc7" SourceId="1" SourceUrl="http://localhost/TelerikTest/WebServices/ProductService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

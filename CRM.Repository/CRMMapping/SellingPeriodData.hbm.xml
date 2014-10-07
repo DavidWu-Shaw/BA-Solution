@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="SellingPeriodData" table="tblSellingPeriod">
+    <id name="Id" column="SellingPeriodId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Name" type="string" length="50" not-null="true">
+      <column name="Name" not-null="true" sql-type="nvarchar" length="50" />
+    </property>
+
+
+    <property name="StartTime" type="DateTime" not-null="false">
+      <column name="StartTime" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="EndTime" type="DateTime" not-null="false">
+      <column name="EndTime" not-null="false" sql-type="datetime" />
+    </property>
+
+  </class>
+</hibernate-mapping>

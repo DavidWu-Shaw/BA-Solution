@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="OrderData" table="tblOrder">
+    <id name="Id" column="OrderId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="OrderNumber" type="string" length="50" not-null="false">
+      <column name="OrderNumber" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="CustomerId" type="int" not-null="false">
+      <column name="CustomerId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ContactId" type="int" not-null="false">
+      <column name="ContactId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="TimeOrdered" type="DateTime" not-null="false">
+      <column name="TimeOrdered" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="TimeShipped" type="DateTime" not-null="false">
+      <column name="TimeShipped" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="TimeShipBy" type="DateTime" not-null="false">
+      <column name="TimeShipBy" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="TimeCancelBy" type="DateTime" not-null="false">
+      <column name="TimeCancelBy" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="QtyOrderedTotal" type="int" not-null="false">
+      <column name="QtyOrderedTotal" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Amount" type="decimal" not-null="false">
+      <column name="Amount" not-null="false" sql-type="decimal"  />
+    </property>
+
+    <property name="CurrencyId" type="int" not-null="false">
+      <column name="CurrencyId" not-null="false" sql-type="int" />
+    </property>
+    <property name="SupplierId" type="int" not-null="false">
+      <column name="SupplierId" not-null="false" sql-type="int" />
+    </property>
+    <property name="BillToId" type="int" not-null="false">
+      <column name="BillToId" not-null="false" sql-type="int" />
+    </property>
+    <property name="ShipToId" type="int" not-null="false">
+      <column name="ShipToId" not-null="false" sql-type="int" />
+    </property>
+    <property name="StatusId" type="int" not-null="false">
+      <column name="StatusId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Notes" type="string" length="500" not-null="false">
+      <column name="Notes" not-null="false" sql-type="nvarchar" length="500" />
+    </property>
+
+    <property name="ShipToContactPhone" type="string" length="20" not-null="false">
+      <column name="ShipToContactPhone" not-null="false" sql-type="nvarchar" length="20" />
+    </property>
+
+    <property name="ShipToContactPerson" type="string" length="100" not-null="false">
+      <column name="ShipToContactPerson" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="ShipToAddress" type="string" length="100" not-null="false">
+      <column name="ShipToAddress" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="ShipToZipCode" type="string" length="20" not-null="false">
+      <column name="ShipToZipCode" not-null="false" sql-type="nvarchar" length="20" />
+    </property>
+
+    <bag name="OrderItemsData" cascade="all-delete-orphan" inverse="true">
+      <key column="OrderId" />
+      <one-to-many class="OrderItemData"/>
+    </bag>
+
+  </class>
+</hibernate-mapping>

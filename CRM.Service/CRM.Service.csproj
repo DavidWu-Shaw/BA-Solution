@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75C34648-F968-4585-A092-69899E20D478}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRM.Service</RootNamespace>
+    <AssemblyName>CRM.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\ba.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="CatalogService.cs" />
+    <Compile Include="QuoteService.cs" />
+    <Compile Include="ReviewService.cs" />
+    <Compile Include="NewsService.cs" />
+    <Compile Include="PostService.cs" />
+    <Compile Include="TopicService.cs" />
+    <Compile Include="EmployeeService.cs" />
+    <Compile Include="TransactionService.cs" />
+    <Compile Include="ShipToService.cs" />
+    <Compile Include="SellingPeriodService.cs" />
+    <Compile Include="CustomerService.cs" />
+    <Compile Include="ActivityService.cs" />
+    <Compile Include="ContactService.cs" />
+    <Compile Include="DocumentService.cs" />
+    <Compile Include="LeadService.cs" />
+    <Compile Include="OpportunityService.cs" />
+    <Compile Include="OrderService.cs" />
+    <Compile Include="ProductService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleEventService.cs" />
+    <Compile Include="SupplierService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Core\Framework.Core.csproj">
+      <Project>{75DCC424-2F1B-4EC9-9645-B0004FC69DFD}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Data\Framework.Data.csproj">
+      <Project>{22B17D86-0279-49FD-B898-1502F3DDD62B}</Project>
+      <Name>Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Security\Framework.Security.csproj">
+      <Project>{1E842BF7-9387-40B5-99D8-FAC6C93170B4}</Project>
+      <Name>Framework.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Service\Framework.Service.csproj">
+      <Project>{5576574D-1D5D-4807-9A5E-15235EB50386}</Project>
+      <Name>Framework.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.UoW\Framework.UoW.csproj">
+      <Project>{D8708C3D-A34F-49F8-B739-2DD9D92AA5D4}</Project>
+      <Name>Framework.UoW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Data\CRM.Data.csproj">
+      <Project>{2A05318F-0A50-41D5-A426-6D2DDFCC33CE}</Project>
+      <Name>CRM.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Repository.Contract\CRM.Repository.Contract.csproj">
+      <Project>{0A9BAB2A-7A48-431C-B5B5-053655865F16}</Project>
+      <Name>CRM.Repository.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Service.Contract\CRM.Service.Contract.csproj">
+      <Project>{A048565D-E58B-4804-B0E9-2B222F10286E}</Project>
+      <Name>CRM.Service.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ba.snk">
+      <Link>ba.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

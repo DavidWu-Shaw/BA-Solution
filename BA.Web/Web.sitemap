@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" enableLocalization="true">
+  <siteMapNode url="~/Shop/Home.aspx" title="$resources:SiteMapLocalizations, HomeTitle" description="Home">
+    <siteMapNode url="~/Logon.aspx" title="$resources:SiteMapLocalizations, SignInTitle" description="Sign in page">
+    </siteMapNode>
+    <siteMapNode url="~/Shop/ContactUsPage.aspx" title="$resources:SiteMapLocalizations, ContactUsPageTitle">
+    </siteMapNode>
+    <siteMapNode url="~/Shop/HelpCenter.aspx" title="$resources:SiteMapLocalizations, HelpCenterTitle">
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/WarningPage.aspx" title="$resources:SiteMapLocalizations, WarningPageTitle">
+    </siteMapNode>
+    <siteMapNode url="~/Social/TopicList.aspx" title="$resources:SiteMapLocalizations, ForumTitle" description="Forum">
+      <siteMapNode url="~/Social/TopicPage.aspx" title="$resources:SiteMapLocalizations, TopicDetailTitle" ></siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Social/NewsList.aspx" title="$resources:SiteMapLocalizations, NewsTitle" description="News">
+      <siteMapNode url="~/Social/NewsPage.aspx" title="$resources:SiteMapLocalizations, NewsDetailTitle" ></siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Shop/ShoppingCart.aspx" title="$resources:SiteMapLocalizations, ShoppingCartTitle" description="My shopping cart">
+      <siteMapNode url="~/Shop/CheckoutWizard.aspx" title="$resources:SiteMapLocalizations, CheckoutTitle" ></siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Shop/OrderTracking.aspx" title="$resources:SiteMapLocalizations, OrderTrackingTitle">
+    </siteMapNode>
+    <siteMapNode url="~/Shop/OrderQuery.aspx" title="$resources:SiteMapLocalizations, OrderQueryTitle">
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Order/OrderProcess.aspx" title="$resources:SiteMapLocalizations, OrderProcessTitle">
+    </siteMapNode>
+    <siteMapNode url="~/Shop/ShopAround.aspx" title="$resources:SiteMapLocalizations, ShopAroundTitle">
+    </siteMapNode>
+    <siteMapNode url="~/Shop/BrowseProduct.aspx" title="$resources:SiteMapLocalizations, ProductExplorerTitle" description="Browse products">
+      <siteMapNode url="~/Shop/ProductPage.aspx" title="$resources:SiteMapLocalizations, ProductDetailTitle" description="Product detail page" />
+    </siteMapNode>
+    <siteMapNode url="~/Shop/GlobalProductExplorer.aspx" title="$resources:SiteMapLocalizations, GlobalProductExplorerTitle" description="Products">
+      <siteMapNode url="~/Shop/MonoProductPage.aspx" title="$resources:SiteMapLocalizations, MonoProductDetailTitle" description="Product detail page" />
+      <siteMapNode url="~/Shop/QuoteCreationWizard.aspx" title="$resources:SiteMapLocalizations, QuoteCreationWizardTitle" description="Product quote page" />
+    </siteMapNode>
+    <siteMapNode url="~/Shop/BrowseSupplier.aspx" title="$resources:SiteMapLocalizations, SupplierExplorerTitle" description="Browse suppliers">
+      <siteMapNode url="~/Shop/SupplierPage.aspx" title="$resources:SiteMapLocalizations, SupplierDetailTitle" description="Supplier detail page">
+        <siteMapNode url="~/Shop/SupplierProductPage.aspx" title="$resources:SiteMapLocalizations, SupplierProductDetailTitle" description="Product detail page" />
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Dashboard/MyDashboard.aspx" title="$resources:SiteMapLocalizations, DashboardTitle" description="Dashboard">
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Contact/ContactMgt.aspx" title="$resources:SiteMapLocalizations, ContactsManagementTitle" description="Contact management">
+      <siteMapNode url="~/WebPages/Contact/ContactManager.aspx" title="$resources:SiteMapLocalizations, ContactManagerTitle" description="Contact manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Contact/ContactEdit.aspx" title="$resources:SiteMapLocalizations, ContactEditTitle" description="Contact manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Contact/ContactImport.aspx" title="$resources:SiteMapLocalizations, ContactImportTitle" description="Contact import">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Customer/CustomerMgt.aspx" title="$resources:SiteMapLocalizations, CustomersManagementTitle" description="Customer management">
+      <siteMapNode url="~/WebPages/Customer/CustomerManager.aspx" title="$resources:SiteMapLocalizations, CustomerManagerTitle" description="Customer manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Customer/CustomerEdit.aspx" title="$resources:SiteMapLocalizations, CustomerEditTitle" description="Customer manager">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Activity/ActivityMgt.aspx" title="$resources:SiteMapLocalizations, ActivitysManagementTitle" description="Activity management">
+      <siteMapNode url="~/WebPages/Activity/ActivityManager.aspx" title="$resources:SiteMapLocalizations, ActivityManagerTitle" description="Activity manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Activity/ActivityEdit.aspx" title="$resources:SiteMapLocalizations, ActivityEditTitle" description="Activity manager">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Product/ProductMgt.aspx" title="$resources:SiteMapLocalizations, ProductsManagementTitle" description="Product management">
+      <siteMapNode url="~/WebPages/Product/ProductManager.aspx" title="$resources:SiteMapLocalizations, ProductManagerTitle" description="Product manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Product/ProductEdit.aspx" title="$resources:SiteMapLocalizations, ProductEditTitle" description="Product edit">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Product/ProductImport.aspx" title="$resources:SiteMapLocalizations, ProductImportTitle" description="Product import">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Supplier/SupplierMgt.aspx" title="$resources:SiteMapLocalizations, SuppliersManagementTitle" description="Supplier management">
+      <siteMapNode url="~/WebPages/Supplier/SupplierManager.aspx" title="$resources:SiteMapLocalizations, SupplierManagerTitle" description="Supplier manager">
+        <siteMapNode url="~/WebPages/Supplier/SupplierProductImport.aspx" title="$resources:SiteMapLocalizations, SupplierProductImportTitle" description="Product import">
+        </siteMapNode>
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Supplier/SupplierEdit.aspx" title="$resources:SiteMapLocalizations, SupplierEditTitle" description="Supplier manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Supplier/SupplierImport.aspx" title="$resources:SiteMapLocalizations, SupplierImportTitle" description="Supplier import">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Catalog/CatalogMgt.aspx" title="$resources:SiteMapLocalizations, CatalogsManagementTitle" description="Catalog management">
+      <siteMapNode url="~/WebPages/Catalog/CatalogManager.aspx" title="$resources:SiteMapLocalizations, CatalogManagerTitle" description="Catalog manager">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/News/NewsMgt.aspx" title="$resources:SiteMapLocalizations, NewsManagementTitle" description="News management">
+      <siteMapNode url="~/WebPages/News/NewsManager.aspx" title="$resources:SiteMapLocalizations, NewsManagerTitle" description="News manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/News/NewsEdit.aspx" title="$resources:SiteMapLocalizations, NewsEditTitle" description="News Edit">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Forum/TopicMgt.aspx" title="$resources:SiteMapLocalizations, ForumTopicManagementTitle" description="Topic management">
+      <siteMapNode url="~/WebPages/Forum/TopicManager.aspx" title="$resources:SiteMapLocalizations, ForumTopicManagerTitle" description="Topic manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Forum/TopicEdit.aspx" title="$resources:SiteMapLocalizations, ForumTopicEditTitle" description="Topic Edit">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Order/OrderMgt.aspx" title="$resources:SiteMapLocalizations, OrdersManagementTitle" description="Order management">
+      <siteMapNode url="~/WebPages/Order/OrderManager.aspx" title="$resources:SiteMapLocalizations, OrderManagerTitle" description="Order manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Order/OrderEdit.aspx" title="$resources:SiteMapLocalizations, OrderEditTitle" description="Order manager">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Employee/EmployeeMgt.aspx" title="$resources:SiteMapLocalizations, EmployeesManagementTitle" description="Employee management">
+      <siteMapNode url="~/WebPages/Employee/EmployeeManager.aspx" title="$resources:SiteMapLocalizations, EmployeeManagerTitle" description="Employee manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Employee/EmployeeEdit.aspx" title="$resources:SiteMapLocalizations, EmployeeEditTitle" description="Employee manager">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/SellingPeriod/SellingPeriodMgt.aspx" title="$resources:SiteMapLocalizations, SellingPeriodsManagementTitle" description="Selling Period management">
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Transaction/TransactionMgt.aspx" title="$resources:SiteMapLocalizations, TransactionsManagementTitle" description="Transaction management">
+      <siteMapNode url="~/WebPages/Transaction/TransactionManager.aspx" title="$resources:SiteMapLocalizations, TransactionManagerTitle" description="Transaction manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Transaction/TransactionEdit.aspx" title="$resources:SiteMapLocalizations, TransactionEditTitle" description="Transaction manager">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/ShipTo/ShipToMgt.aspx" title="$resources:SiteMapLocalizations, ShipTosManagementTitle" description="ShipTo management">
+      <siteMapNode url="~/WebPages/ShipTo/ShipToManager.aspx" title="$resources:SiteMapLocalizations, ShipToManagerTitle" description="ShipTo manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/ShipTo/ShipToEdit.aspx" title="$resources:SiteMapLocalizations, ShipToEditTitle" description="ShipTo manager">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Document/DocumentMgt.aspx" title="$resources:SiteMapLocalizations, DocumentsManagementTitle" description="Document management">
+      <siteMapNode url="~/WebPages/Document/DocumentManager.aspx" title="$resources:SiteMapLocalizations, DocumentManagerTitle" description="Document manager">
+      </siteMapNode>
+      <siteMapNode url="~/WebPages/Document/DocumentEdit.aspx" title="$resources:SiteMapLocalizations, DocumentEditTitle" description="Document manager">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/Category/CategoryMgt.aspx" title="$resources:SiteMapLocalizations, CategoryManagementTitle" description="Category management">
+    </siteMapNode>
+    <siteMapNode url="~/WebPages/PersonalInfoPage.aspx" title="$resources:SiteMapLocalizations, PersonalInformationTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/ApplicationSettingMgt.aspx" title="$resources:SiteMapLocalizations, ApplicationSettingsTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Common/Subject/SubjectMgt.aspx" title="$resources:SiteMapLocalizations, SubjectManagementTitle" description="">
+      <siteMapNode url="~/Common/Subject/SubjectManager.aspx" title="$resources:SiteMapLocalizations, SubjectManagerTitle" description="">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Common/Subject/EntityMgt.aspx" title="$resources:SiteMapLocalizations, EntityManagementTitle" description="">
+      <siteMapNode url="~/Common/Subject/EntityManager.aspx" title="$resources:SiteMapLocalizations, EntityManagerTitle" description="">
+      </siteMapNode>
+      <siteMapNode url="~/Common/Subject/EntityEdit.aspx" title="$resources:SiteMapLocalizations, EntityEditTitle" description="">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Setup/Domain/DomainMgt.aspx" title="$resources:SiteMapLocalizations, DomainManagementTitle" description="">
+      <siteMapNode url="~/Setup/Domain/DomainManager.aspx" title="$resources:SiteMapLocalizations, DomainManagerTitle" description="">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Setup/User/UserMgt.aspx" title="$resources:SiteMapLocalizations, UserManagementTitle" description="">
+      <siteMapNode url="~/Setup/User/UserManager.aspx" title="$resources:SiteMapLocalizations, UserManagerTitle" description="">
+      </siteMapNode>
+      <siteMapNode url="~/Setup/User/UserEdit.aspx" title="$resources:SiteMapLocalizations, UserEditTitle" description="">
+      </siteMapNode>
+    </siteMapNode>
+    <siteMapNode url="~/Setup/Menu/MainMenuMgt.aspx" title="$resources:SiteMapLocalizations, MainMenuManagementTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/Menu/SetupMenuMgt.aspx" title="$resources:SiteMapLocalizations, SetupMenuManagementTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/TestSmtp.aspx" title="$resources:SiteMapLocalizations, SMTPtestTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/Admin.aspx" title="$resources:SiteMapLocalizations, AdministrationTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/webPages/Catalog/CategoryManager.aspx" title="$resources:SiteMapLocalizations, CategoryManagerTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/LanguagePhraseImport.aspx" title="$resources:SiteMapLocalizations, MultiLanguageSetupTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/LanguageSysPhraseExport.aspx" title="$resources:SiteMapLocalizations, MultiLanguageSetupTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/MenuLanguagePhraseExport.aspx" title="$resources:SiteMapLocalizations, MultiLanguageSetupTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/ProductLanguagePhrasesPage.aspx" title="$resources:SiteMapLocalizations, MultiLanguageSetupTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/SupplierLanguagePhrasesPage.aspx" title="$resources:SiteMapLocalizations, MultiLanguageSetupTitle" description="">
+    </siteMapNode>
+    <siteMapNode url="~/Setup/CategoryLanguagePhrasesPage.aspx" title="$resources:SiteMapLocalizations, MultiLanguageSetupTitle" description="">
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

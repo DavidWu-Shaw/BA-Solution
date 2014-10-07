@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="PA.Data" namespace="PA.Data">
+  <class name="TaskCommentData" table="tblTaskComment">
+    <id name="Id" column="TaskCommentId" type="int" unsaved-value="-1">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+		<property name="Comment" column="Comment" />
+
+		<property name="IssuedDate" column="IssuedDate" />
+
+    <property name="IssuedById" type="int" not-null="false">
+      <column name="IssuedById" not-null="false" sql-type="int" />
+    </property>
+
+    <many-to-one name="Parent" class="TaskData" column="TaskId"  not-null="true"/>
+
+
+    <!-- [END PROPERTIES] -->
+
+    <!-- [CHILD COLLECTIONS] -->
+    <!-- [END CHILD COLLECTIONS] -->
+  </class>
+</hibernate-mapping>

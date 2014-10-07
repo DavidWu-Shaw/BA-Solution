@@ -1,0 +1,87 @@
+﻿@using Framework.Core
+@using SubjectEngine.Component.Dto
+@using SFA.Web.Common
+@using Framework.Core.Helpers
+@using SubjectEngine.Core
+@using BA.Core
+@model IEnumerable<BaseDto>
+@{
+    string instanceType = ViewData["InstanceType"].ToString();
+    object languageId = ViewData["LanguageId"];
+    SubjectDto subject = WebContext.Current.SubjectList[instanceType];
+}
+<table>
+    <thead>
+        <tr>
+            @foreach (var field in subject.SubjectFields)
+            {
+                if (field.IsShowInGrid)
+                { 
+                <td>
+                    @field.GetFieldLabelByLanguage(languageId)
+                </td>
+                }
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var instance in Model)
+        { 
+            <tr>
+                @foreach (var field in subject.SubjectFields)
+                {
+                    if (field.IsShowInGrid)
+                    {
+                        string value = string.Empty;
+                        object rowValue = ReflectionHelper.GetValue(instance, field.FieldKey);
+                        if (rowValue != null)
+                        {
+                            if (field.IsLinkInGrid && field.DucType != DucTypes.Lookup && field.DucType != DucTypes.Pickup)
+                            {
+                                value = rowValue.ToString();
+                            }
+                            else
+                            {
+                                switch (field.DucType)
+                                {
+                                    case DucTypes.Lookup:
+                                    case DucTypes.Pickup:
+                                    case DucTypes.Text:
+                                    case DucTypes.TextArea:
+                                    case DucTypes.Email:
+                                    case DucTypes.Formula:
+                                    case DucTypes.Integer:
+                                    case DucTypes.Number:
+                                    case DucTypes.Percentage:
+                                        value = rowValue.ToString();
+                                        break;
+                                    case DucTypes.Currency:
+                                        value = rowValue.ToString();
+                                        break;
+                                    case DucTypes.Date:
+                                        value = string.Format(CommonConst.DateFormatString, rowValue);
+                                        break;
+                                    case DucTypes.Datetime:
+                                        value = string.Format(CommonConst.DateTimeFormatString, rowValue);
+                                        break;
+                                    case DucTypes.Time:
+                                        value = string.Format(CommonConst.TimeFormatString, rowValue);
+                                        break;
+                                    case DucTypes.Image:
+                                        break;
+                                    case DucTypes.Attachment:
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        }
+                    <td>
+                        @value
+                    </td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>

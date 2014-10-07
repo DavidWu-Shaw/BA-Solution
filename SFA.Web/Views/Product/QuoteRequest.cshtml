@@ -1,0 +1,111 @@
+﻿@using CRM.ShopComponent.Dto
+@model QuoteInfoDto
+@{
+    ViewBag.Title = "Quote Request";
+}
+<script type="text/javascript">
+    $(function () {
+
+        $(".wizard-step:first").fadeIn(); // show first step
+        // attach backStep button handler
+        // hide on first step
+        $("#back-step").hide().click(function () {
+            var $step = $(".wizard-step:visible"); // get current step
+            if ($step.prev().hasClass("wizard-step")) { // is there any previous step?
+                $step.hide().prev().fadeIn();  // show it and hide current step
+
+                // disable backstep button?
+                if (!$step.prev().prev().hasClass("wizard-step")) {
+                    $("#back-step").hide();
+                }
+            }
+        });
+
+        // attach nextStep button handler       
+        $("#next-step").click(function () {
+            var $step = $(".wizard-step:visible"); // get current step
+            var validator = $("form").validate(); // obtain validator
+            var anyError = false;
+            $step.find("input").each(function () {
+                if (!validator.element(this)) { // validate every input element inside this step
+                    anyError = true;
+                }
+            });
+
+            if (anyError)
+                return false; // exit if any error found
+
+            if ($step.next().hasClass("confirm")) { // is it confirmation?
+                // show confirmation asynchronously
+                $.post('@Url.Action("QuoteConfirm", "Product")', $("form").serialize(), function (r) {
+                    // inject response in confirmation step
+                    $(".wizard-step.confirm").html(r);
+                });
+            }
+
+            if ($step.next().hasClass("wizard-step")) { // is there any next step?
+                $step.hide().next().fadeIn();  // show it and hide current step
+                $("#back-step").show();   // recall to show backStep button
+            }
+
+            else { // this is last step, submit form
+                $("form").submit();
+            }
+        });
+    });
+</script>
+<h3>
+    Quote Request: @Model.ProductName</h3>
+@using (Html.BeginForm())
+{
+    <fieldset>
+        @Html.Hidden("ProductId", Model.ProductId)
+        <div class="wizard-step">
+            <h4>
+                Your contact information:</h4>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Email)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.ContactPerson)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.ContactPerson)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Phone)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Phone)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Address)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Address)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.ZipCode)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.ZipCode)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Notes)
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(m => m.Notes)
+            </div>
+        </div>
+        <div class="wizard-step confirm">
+        </div>
+        <p>
+            <input type="button" id="back-step" name="back-step" value="<< Back" class="actionButton" />
+            <input type="button" id="next-step" name="next-step" value="Next >>" class="actionButton" />
+        </p>
+    </fieldset>
+}

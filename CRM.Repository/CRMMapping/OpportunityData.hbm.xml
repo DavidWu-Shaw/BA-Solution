@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="OpportunityData" table="tblOpportunity">
+    <id name="Id" column="OpportunityId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Name" type="string" length="100" not-null="true">
+      <column name="Name" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Description" type="string" length="100" not-null="false">
+      <column name="Description" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="ContactId" type="int" not-null="false">
+      <column name="ContactId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="CustomerId" type="int" not-null="false">
+      <column name="CustomerId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ProductId" type="int" not-null="false">
+      <column name="ProductId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="EstimateAmount" type="decimal" not-null="false">
+      <column name="EstimateAmount" not-null="false" sql-type="decimal" />
+    </property>
+  </class>
+</hibernate-mapping>

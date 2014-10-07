@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="DocumentData" table="tblDocument">
+    <id name="Id" column="DocumentId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Name" type="string" length="100" not-null="true">
+      <column name="Name" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Description" type="string" length="100" not-null="false">
+      <column name="Description" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Notes" type="string" length="100" not-null="false">
+      <column name="Notes" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="FileName" type="string" length="100" not-null="false">
+      <column name="FileName" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Content" column="Content" length="2147483647" />
+    
+    <property name="Thumbnail" column="Thumbnail" length="2147483647" />
+
+    <property name="DocTypeId" type="int" not-null="false">
+      <column name="DocTypeId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IssuedById" type="int" not-null="false">
+      <column name="IssuedById" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IssuedDate" type="DateTime" not-null="false">
+      <column name="IssuedDate" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="Extension" type="string" length="10" not-null="false">
+      <column name="Extension" not-null="false" sql-type="nvarchar" length="10" />
+    </property>
+
+    <property name="ContentType" type="string" length="100" not-null="false">
+      <column name="ContentType" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="ContentLength" type="int" not-null="false">
+      <column name="ContentLength" not-null="false" sql-type="int" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.orderbyapps.com/WebServices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.orderbyapps.com/WebServices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.orderbyapps.com/WebServices/">
+      <s:element name="RetrieveProductsBySupplier">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="supplierId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveProductsBySupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveProductsBySupplierResult" type="tns:ArrayOfProductInfoDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductInfoDto" nillable="true" type="tns:ProductInfoDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductId" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryId" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupplierId" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sketch" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellingPeriodId" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDiscontinued" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DiscountAmount" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rating" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfRatings" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SupplierName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SellingPeriodName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SellingPeriodStartTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="SellingPeriodEndTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reviews" type="tns:ArrayOfReviewInfoDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfReviewInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ReviewInfoDto" nillable="true" type="tns:ReviewInfoDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ReviewInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReviewId" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectId" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rating" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuedById" />
+          <s:element minOccurs="0" maxOccurs="1" name="IssuedBy" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IssuedTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrieveAllSupplier">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="SupplierInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SupplierId" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressLine1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressLine2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryState" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPerson" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactFax" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryId" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NationId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryText" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NationText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowTakeOut" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowReserve" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AllowBringWine" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="DayStartTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DayEndTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rating" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfRatings" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Logo" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Website" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reviews" type="tns:ArrayOfReviewInfoDto" />
+          <s:element minOccurs="0" maxOccurs="1" name="Products" type="tns:ArrayOfProductInfoDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSupplierInfoDto">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SupplierInfoDto" nillable="true" type="tns:SupplierInfoDto" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RetrieveAllSupplierResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveAllSupplierResult" type="tns:ArrayOfSupplierInfoDto" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetrieveProductsBySupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveProductsBySupplier" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProductsBySupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveProductsBySupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAllSupplierSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveAllSupplier" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveAllSupplierSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveAllSupplierResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProductWebServiceSoap">
+    <wsdl:operation name="RetrieveProductsBySupplier">
+      <wsdl:input message="tns:RetrieveProductsBySupplierSoapIn" />
+      <wsdl:output message="tns:RetrieveProductsBySupplierSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllSupplier">
+      <wsdl:input message="tns:RetrieveAllSupplierSoapIn" />
+      <wsdl:output message="tns:RetrieveAllSupplierSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProductWebServiceSoap" type="tns:ProductWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveProductsBySupplier">
+      <soap:operation soapAction="http://www.orderbyapps.com/WebServices/RetrieveProductsBySupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllSupplier">
+      <soap:operation soapAction="http://www.orderbyapps.com/WebServices/RetrieveAllSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProductWebServiceSoap12" type="tns:ProductWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetrieveProductsBySupplier">
+      <soap12:operation soapAction="http://www.orderbyapps.com/WebServices/RetrieveProductsBySupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAllSupplier">
+      <soap12:operation soapAction="http://www.orderbyapps.com/WebServices/RetrieveAllSupplier" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductWebService">
+    <wsdl:port name="ProductWebServiceSoap" binding="tns:ProductWebServiceSoap">
+      <soap:address location="http://localhost/TelerikTest/WebServices/ProductWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProductWebServiceSoap12" binding="tns:ProductWebServiceSoap12">
+      <soap12:address location="http://localhost/TelerikTest/WebServices/ProductWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

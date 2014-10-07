@@ -1,0 +1,44 @@
+﻿@using SFA.Web.Controllers
+@using SFA.Web.Common
+@using SFA.Web.Models
+@model ProductExplorerViewModel
+@{
+    ViewBag.Title = "Product Explorer";
+}
+<h3>
+    Product Explorer</h3>
+<div>
+    <div style="width: 240px; float: left; background: LightGrey;">
+        @Html.Partial("CategoryTreePartial", Model.CategoryTree.SubNodes,
+                                          new ViewDataDictionary 
+                                          { 
+                                            { "UpdateTargetId", "productlist" }, 
+                                            { "LoadingElementId", "loading" },
+                                            { "AjaxUrlAction", ProductController.ProductListAction },
+                                            { "NonAjaxAction", ProductController.ExplorerAction }
+                                          })
+        @*        @Html.TreeView("productcat",
+                        Model.CategoryTree.SubNodes,
+                        o => o.SubNodes,
+                        o => Ajax.ActionLink(@o.Name, ProductController.ExplorerAction,
+                                 new { id = o.Id },
+                                 new AjaxOptions
+                                 {
+                                     UpdateTargetId = "productlist",
+                                     LoadingElementId = "loading",
+                                     Url = Url.Action(ProductController.ProductListAction, new { id = o.Id })
+                                 }).ToHtmlString(),
+                        false)
+*@
+    </div>
+    <div id="productlist" style="margin: 0px 0px 4px 250px; width: 740px; min-width: 400px;">
+        @Html.Action(ProductController.ProductListAction, new { categoryId = Model.CurrentCategoryId })
+    </div>
+    <div id="loading" class="ajaxLoading">
+        <p>
+            Loading Data...
+        </p>
+    </div>
+    <div class="clear">
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="DataTypeData" table="tblDataType">
+    <id name="Id" column="DataTypeId" type="int">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+    <property name="Name" type="string" not-null="true">
+      <column name="Name" not-null="true" sql-type="nvarchar" />
+    </property>
+
+    <property name="Description" type="string" not-null="false">
+      <column name="Description" not-null="false" sql-type="nvarchar" />
+    </property>
+
+    <property name="DucType" type="string" not-null="false">
+      <column name="DucType" not-null="false" sql-type="nvarchar" />
+    </property>
+
+    <!-- [END PROPERTIES] -->
+  </class>
+</hibernate-mapping>

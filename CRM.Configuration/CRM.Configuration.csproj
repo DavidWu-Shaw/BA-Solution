@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{288BB1BB-7E2E-4FC2-ABB1-26F88859598C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRM.Configuration</RootNamespace>
+    <AssemblyName>CRM.Configuration</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\..\Reference\Unity\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CRMRepositoryRegistry.cs" />
+    <Compile Include="CRMServiceRegistry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Data.NHibernate\Framework.Data.NHibernate.csproj">
+      <Project>{a2244012-9b85-4812-b8b2-13df4400a0cc}</Project>
+      <Name>Framework.Data.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Data\Framework.Data.csproj">
+      <Project>{22b17d86-0279-49fd-b898-1502f3ddd62b}</Project>
+      <Name>Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Service\Framework.Service.csproj">
+      <Project>{5576574d-1d5d-4807-9a5e-15235eb50386}</Project>
+      <Name>Framework.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Unity\Framework.Unity.csproj">
+      <Project>{40391796-4f81-4ba0-8166-690346e996b7}</Project>
+      <Name>Framework.Unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.UoW\Framework.UoW.csproj">
+      <Project>{d8708c3d-a34f-49f8-b739-2dd9d92aa5d4}</Project>
+      <Name>Framework.UoW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Repository.Contract\CRM.Repository.Contract.csproj">
+      <Project>{0a9bab2a-7a48-431c-b5b5-053655865f16}</Project>
+      <Name>CRM.Repository.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Repository\CRM.Repository.csproj">
+      <Project>{9fb94fe0-93f3-4695-916e-8ad6c49aebe2}</Project>
+      <Name>CRM.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Service.Contract\CRM.Service.Contract.csproj">
+      <Project>{a048565d-e58b-4804-b0e9-2b222f10286e}</Project>
+      <Name>CRM.Service.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Service\CRM.Service.csproj">
+      <Project>{75c34648-f968-4585-a092-69899e20d478}</Project>
+      <Name>CRM.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

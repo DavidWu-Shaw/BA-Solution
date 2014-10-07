@@ -1,0 +1,11 @@
+﻿@using SFA.Web.Controllers
+@if (Request.IsAuthenticated)
+{
+    <text>Welcome <strong>@User.Identity.Name</strong>! [ @Html.ActionLink("Sign Out", AccountController.SignOutAction, new { controller = AccountController.ControllerName, area = "" })
+    ]</text>
+    @:[ @Html.ActionLink("Admin", SFA.Web.Areas.Admin.Controllers.HomeController.HomeAction, new { controller = SFA.Web.Areas.Admin.Controllers.HomeController.ControllerName, area = "Admin" })]
+}
+else
+{
+    @:[ @Html.ActionLink("Sign In", AccountController.SignInAction, new { controller = AccountController.ControllerName, returnUrl = HttpContext.Current.Request.RawUrl, area = "" })]
+                }

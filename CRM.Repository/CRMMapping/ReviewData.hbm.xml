@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="ReviewData" table="tblReview">
+    <id name="Id" column="ReviewId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="ObjectId" type="int" not-null="true">
+      <column name="ObjectId" not-null="true" sql-type="int" />
+    </property>
+
+    <property name="ObjectTypeId" type="int" not-null="false">
+      <column name="ObjectTypeId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Rating" type="decimal" not-null="false">
+      <column name="Rating" not-null="false" sql-type="decimal" />
+    </property>
+
+    <property name="Content" type="string" length="7999" not-null="true">
+      <column name="Content" not-null="true" sql-type="nvarchar" length="7999" />
+    </property>
+
+    <property name="Title" type="string" length="100" not-null="false">
+      <column name="Title" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="IssuedById" type="int" not-null="false">
+      <column name="IssuedById" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IssuedTime" type="DateTime" not-null="false">
+      <column name="IssuedTime" not-null="false" sql-type="datetime" />
+    </property>
+
+  </class>
+</hibernate-mapping>

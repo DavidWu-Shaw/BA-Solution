@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="TransactionData" table="tblTransaction">
+    <id name="Id" column="TransactionId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="TransactionNumber" type="string" length="50" not-null="false">
+      <column name="TransactionNumber" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="CustomerId" type="int" not-null="false">
+      <column name="CustomerId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ContactId" type="int" not-null="false">
+      <column name="ContactId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="DateSigned" type="DateTime" not-null="false">
+      <column name="DateSigned" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="EffectiveDate" type="DateTime" not-null="false">
+      <column name="EffectiveDate" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="Amount" type="decimal" not-null="false">
+      <column name="Amount" not-null="false" sql-type="decimal"  />
+    </property>
+
+    <property name="CurrencyId" type="int" not-null="false">
+      <column name="CurrencyId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Notes" type="string" length="500" not-null="false">
+      <column name="Notes" not-null="false" sql-type="nvarchar" length="500" />
+    </property>
+
+    <bag name="TransactionItemsData" cascade="all-delete-orphan" inverse="true">
+      <key column="TransactionId" />
+      <one-to-many class="TransactionItemData"/>
+    </bag>
+
+  </class>
+</hibernate-mapping>

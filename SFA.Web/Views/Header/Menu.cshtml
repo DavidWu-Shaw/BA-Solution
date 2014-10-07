@@ -1,0 +1,13 @@
+﻿@using BA.Core;
+@model IEnumerable<Setup.Component.Dto.MainMenuDto>
+@{
+    Layout = null;
+}
+<ul id="menu">
+    @foreach (var link in Model)
+    {
+        <li>
+            @Html.ActionLink(@Html.LocalizeData(CRM.Core.CommonConst.MainMenuTextKeyFormatString, link.Id, link.MenuText), "Index", link.Name)
+        </li>
+    }
+</ul>

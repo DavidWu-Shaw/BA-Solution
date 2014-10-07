@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="OrderBriefInfoData" mutable="false">
+    <id name="OrderId" column="OrderId" type="int">
+    </id>
+
+    <property name="OrderNumber" type="string" length="50" not-null="false">
+      <column name="OrderNumber" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="Amount" type="decimal" not-null="false">
+      <column name="Amount" not-null="false" sql-type="decimal"  />
+    </property>
+
+    <property name="StatusId" type="int" not-null="false">
+      <column name="StatusId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="StatusText" type="string" length="100" not-null="true">
+      <column name="StatusText" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+
+  </class>
+</hibernate-mapping>

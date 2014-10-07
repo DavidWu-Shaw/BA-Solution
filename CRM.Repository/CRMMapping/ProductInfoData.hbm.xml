@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="ProductInfoData" table="viewProductInfo" mutable="false">
+    <id name="ProductId" column="ProductId" type="int">
+    </id>
+
+    <property name="Name" type="string" length="100" not-null="false">
+      <column name="Name" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Description" type="string" length="400" not-null="false">
+      <column name="Description" not-null="false" sql-type="nvarchar" length="400" />
+    </property>
+
+    <property name="CategoryId" type="int" not-null="false">
+      <column name="CategoryId" not-null="false" sql-type="int" />
+    </property>
+    <property name="CatalogId" type="int" not-null="false">
+      <column name="CatalogId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="SupplierId" type="int" not-null="false">
+      <column name="SupplierId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="UnitPrice" type="decimal" not-null="false">
+      <column name="UnitPrice" not-null="false" sql-type="decimal"  />
+    </property>
+
+    <property name="Sketch" column="Sketch" length="2147483647" />
+
+    <property name="SellingPeriodId" type="int" not-null="false">
+      <column name="SellingPeriodId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IsDiscontinued" type="bool" not-null="false">
+      <column name="IsDiscontinued" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="DiscountAmount" type="decimal" not-null="false">
+      <column name="DiscountAmount" not-null="false" sql-type="decimal"  />
+    </property>
+    <property name="Packaging" type="string" length="100" not-null="false">
+      <column name="Packaging" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+    <property name="UnitOfMeasure" type="string" length="10" not-null="false">
+      <column name="UnitOfMeasure" not-null="false" sql-type="nvarchar" length="10" />
+    </property>
+
+    <property name="Rating" type="decimal" not-null="false">
+      <column name="Rating" not-null="false" sql-type="decimal"  />
+    </property>
+
+    <property name="NumberOfRatings" type="int" not-null="false">
+      <column name="NumberOfRatings" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="SupplierName" type="string" not-null="false">
+      <column name="SupplierName" not-null="false" sql-type="nvarchar" />
+    </property>
+
+    <property name="CategoryText" type="string" not-null="false">
+      <column name="CategoryText" not-null="false" sql-type="nvarchar" />
+    </property>
+
+    <property name="SellingPeriodName" type="string" not-null="false">
+      <column name="SellingPeriodName" not-null="false" sql-type="nvarchar" />
+    </property>
+
+    <property name="SellingPeriodStartTime" type="DateTime" not-null="false">
+      <column name="SellingPeriodStartTime" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="SellingPeriodEndTime" type="DateTime" not-null="false">
+      <column name="SellingPeriodEndTime" not-null="false" sql-type="datetime" />
+    </property>
+  </class>
+</hibernate-mapping>

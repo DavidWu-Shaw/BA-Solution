@@ -1,0 +1,13 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true"
+    CodeBehind="ShopMasterPage.master.cs" Inherits="BA.Web.MasterPages.ShopMasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadC" runat="server">
+    <asp:ContentPlaceHolder ID="ShopMHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainC" runat="server">
+    <telerik:RadScriptManager ID="radSM1" runat="server">
+    </telerik:RadScriptManager>
+    <asp:ContentPlaceHolder ID="ShopMBody" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

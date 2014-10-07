@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Setup.Data" namespace="Setup.Data">
+  <class name="DomainSetupMenuData" table="tblDomainSetupMenu">
+    <id name="Id" column="DomainSetupMenuId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <many-to-one name="Parent" class="DomainData" column="DomainId" not-null="true"/>
+
+    <property name="SetupMenuId" type="int" not-null="false">
+      <column name="SetupMenuId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Sort" type="int" not-null="false">
+      <column name="Sort" not-null="false" sql-type="int" />
+    </property>
+
+  </class>
+</hibernate-mapping>

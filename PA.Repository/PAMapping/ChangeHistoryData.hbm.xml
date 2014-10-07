@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="PA.Data" namespace="PA.Data">
+  <class name="ChangeHistoryData" table="tblChangeHistory">
+    <id name="Id" column="ChangeHistoryId" type="int" unsaved-value="-1">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+    <property name="ChangeContent" column="ChangeContent" />
+
+    <property name="ObjectTypeId" column="ObjectTypeId" />
+
+    <property name="ObjectId" column="ObjectId" />
+    <property name="ObjectParentId" column="ObjectParentId" />
+
+    <property name="ChangedDate" column="ChangedDate" />
+
+    <property name="ChangedById" column="ChangedById" />
+
+  </class>
+</hibernate-mapping>

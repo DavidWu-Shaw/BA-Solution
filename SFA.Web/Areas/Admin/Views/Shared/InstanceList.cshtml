@@ -1,0 +1,104 @@
+﻿@using Framework.Core
+@using SubjectEngine.Component.Dto
+@using SFA.Web.Common
+@using Framework.Core.Helpers
+@using SubjectEngine.Core
+@model SFA.Web.Areas.Admin.Models.ListViewModel
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = Model.Subject.GetSubjectLabelByLanguage(Model.CurrentLanguageId);
+}
+<h3>@ViewBag.Title</h3>
+<table>
+    <thead>
+        <tr>
+            @foreach (var field in Model.Subject.SubjectFields)
+            {
+                if (field.IsShowInGrid)
+                { 
+                <th>
+                    @field.GetFieldLabelByLanguage(Model.CurrentLanguageId)
+                </th>
+                }
+            }
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var instance in Model.Instances)
+        { 
+            <tr>
+                @{
+            object idValue = ReflectionHelper.GetValue(instance, BaseDto.FLD_StringId);
+            foreach (var field in Model.Subject.SubjectFields)
+            {
+                if (!field.IsShowInGrid)
+                {
+                    continue;
+                }
+                string textValue = string.Empty;
+                object value = ReflectionHelper.GetValue(instance, field.FieldKey);
+                if (value == null)
+                {
+                    <td>
+                        @textValue
+                    </td>
+                    continue;
+                }
+                if (field.IsLinkInGrid && field.DucType != DucTypes.Lookup && field.DucType != DucTypes.Pickup)
+                {
+                    textValue = value.ToString();
+                    <td>
+                        @Html.ActionLink(textValue, "Detail", new { id = idValue })
+                    </td>
+                }
+                else
+                {
+                    switch (field.DucType)
+                    {
+                        case DucTypes.Lookup:
+                        case DucTypes.Pickup:
+                        case DucTypes.Text:
+                        case DucTypes.TextArea:
+                        case DucTypes.Email:
+                        case DucTypes.Formula:
+                        case DucTypes.Integer:
+                        case DucTypes.Number:
+                        case DucTypes.Percentage:
+                            textValue = value.ToString();
+                            break;
+                        case DucTypes.Currency:
+                            textValue = value.ToString();
+                            break;
+                        case DucTypes.Date:
+                            textValue = string.Format(BA.Core.UIConst.DateFormatString, value);
+                            break;
+                        case DucTypes.Datetime:
+                            textValue = string.Format(BA.Core.UIConst.DateTimeFormatString, value);
+                            break;
+                        case DucTypes.Time:
+                            textValue = string.Format(BA.Core.UIConst.TimeFormatString, value);
+                            break;
+                        case DucTypes.Image:
+                            break;
+                        case DucTypes.Attachment:
+                            break;
+                        default:
+                            break;
+                    }
+                    <td>
+                        @textValue
+                    </td>
+                }
+            }
+                }
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = idValue }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = idValue })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

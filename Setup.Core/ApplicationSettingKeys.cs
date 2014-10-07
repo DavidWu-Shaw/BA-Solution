@@ -1,0 +1,47 @@
+﻿
+namespace Setup.Core
+{
+    public enum ApplicationSettingKeys
+    {
+        Name,
+        Version,
+        IsTestMode,
+        EnableSSL,
+        EnableMultiUser,
+        EnableGridColumnFilter,
+        EnableNotification,
+        SchedulerDefaultView,
+        DayStartTime,
+        DayEndTime,
+        DropDownHeight,
+        GridPageSize,
+        EditFormColumnMax,
+        NewsContentBriefLength,
+        DateFormat,
+        DateTimeFormat,
+        TimeFormat,
+        DateFormatString,
+        DateTimeFormatString,
+        TimeFormatString,
+        SMTPServer,
+        SMTPPort,
+        SMTPUsername,
+        SMTPPassword,
+        OrderCoordinatorEmail,
+        DefaultEmailFrom,
+        IsEmailToCustomer,
+        IsEmailToSupplier,
+        IsSetSOHold,
+        OrderTrackingUrlFormat,
+        IsShoppingSupported,
+        IsMultiLanguageSupported,
+        DefaultLanguageId,
+        IsAccountActivateRequired,
+        GlobalProductCatalogId,
+        SupplierCatalogId,
+        SiteCoordinatorEmail,
+        QuoteCoordinatorEmail,
+        IsQuoteSupported,
+        EnableRegister
+    }
+}

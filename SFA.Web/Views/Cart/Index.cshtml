@@ -1,0 +1,73 @@
+﻿@using CRM.ShopComponent.Dto
+@using SFA.Web.Controllers
+@model CartDto
+@{
+    ViewBag.Title = "Your Cart";
+}
+<h3>
+    Your Cart</h3>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Item
+            </th>
+            <th>
+                Unit Price
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Sub Total
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CartItemDto item in Model.CartItems)
+        {
+            <tr>
+                <td>
+                    @item.ProductName
+                </td>
+                <td>
+                    @item.UnitPrice.ToString("c")
+                </td>
+                <td>
+                    @item.QtyOrdered
+                </td>
+                <td>
+                    @item.Amount
+                </td>
+                <td>
+                    @using (Html.BeginForm(CartController.RemoveFromCartAction, CartController.ControllerName))
+                    {
+                        @Html.Hidden("productId", item.ProductId)
+                        <input type="submit" value="Remove" class="actionButton" />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                Total:
+            </td>
+            <td>
+                @Model.QtyOrderedTotal
+            </td>
+            <td>
+                @Model.TotalAmount
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<p class="actionButton">
+    @Html.ActionLink("Continue Shopping", ProductController.IndexAction, ProductController.ControllerName)
+    @Html.ActionLink("Checkout Now", CartController.CheckoutAction)
+</p>

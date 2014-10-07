@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="SubjectFieldData" table="tblSubjectField">
+    <id name="Id" column="SubjectFieldId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="FieldKey" column="FieldKey" />
+
+    <property name="FieldLabel" column="FieldLabel" />
+
+    <property name="HelpText" column="HelpText" />
+
+    <many-to-one class="DataTypeData" name="FieldDataTypeData" column="DataTypeId"/>
+
+    <property name="PickupEntityId" type="int" not-null="false">
+      <column name="PickupEntityId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="LookupSubjectId" type="int" not-null="false">
+      <column name="LookupSubjectId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IsRequired" column="IsRequired" />
+    <property name="IsBuiltIn" column="IsBuiltIn" />
+    <property name="IsReadonly" column="IsReadonly" />
+    <property name="IsShowInGrid" column="IsShowInGrid" />
+    <property name="IsLinkInGrid" column="IsLinkInGrid" />
+
+    <property name="Sort" type="int" not-null="false">
+      <column name="Sort" not-null="false" sql-type="smallint" />
+    </property>
+
+    <property name="RowIndex" type="int" not-null="false">
+      <column name="RowIndex" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ColIndex" type="int" not-null="false">
+      <column name="ColIndex" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="MaxLength" type="int" not-null="false">
+      <column name="MaxLength" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="NavigateUrlFormatString" type="string" length="100" not-null="false">
+      <column name="NavigateUrlFormatString" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <many-to-one name="Parent" class="SubjectData" column="SubjectId" not-null="true"/>
+
+    <bag name="SubjectFieldLanguagesData" cascade="all-delete-orphan" inverse="true">
+      <key column="SubjectFieldId" />
+      <one-to-many class="SubjectFieldLanguageData"/>
+    </bag>
+
+  </class>
+</hibernate-mapping>

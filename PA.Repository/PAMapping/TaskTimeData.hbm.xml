@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="PA.Data" namespace="PA.Data">
+  <class name="TaskTimeData" table="tblTaskTime">
+    <id name="Id" column="TaskTimeId" type="int" unsaved-value="-1">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+    <property name="UserId" type="int" not-null="false">
+      <column name="UserId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="TimeSpent" column="TimeSpent" />
+
+		<property name="DateSpent" column="DateSpent" />
+
+		<property name="Note" column="Note" />
+
+		<property name="TimeFrom" column="TimeFrom" />
+
+		<property name="TimeTo" column="TimeTo" />
+
+		<property name="Rate" column="Rate" />
+
+		<many-to-one name="Parent" class="TaskData" column="TaskId"/>
+
+
+    <!-- [END PROPERTIES] -->
+
+    <!-- [CHILD COLLECTIONS] -->
+    <!-- [END CHILD COLLECTIONS] -->
+  </class>
+</hibernate-mapping>

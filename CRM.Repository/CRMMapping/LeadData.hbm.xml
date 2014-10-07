@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="LeadData" table="tblLead">
+    <id name="Id" column="LeadId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="FullName" type="string" length="100" not-null="false">
+      <column name="FullName" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="FamilyName" type="string" length="100" not-null="false">
+      <column name="FamilyName" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Gender" type="string" length="1" not-null="false">
+      <column name="Gender" not-null="false" sql-type="char" length="1" />
+    </property>
+
+    <property name="AddressLine1" type="string" length="100" not-null="false">
+      <column name="AddressLine1" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+    <property name="AddressLine2" type="string" length="100" not-null="false">
+      <column name="AddressLine2" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+    <property name="Country" type="string" length="50" not-null="false">
+      <column name="Country" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="CountryState" type="string" length="50" not-null="false">
+      <column name="CountryState" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="City" type="string" length="50" not-null="false">
+      <column name="City" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="ZipCode" type="string" length="50" not-null="false">
+      <column name="ZipCode" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="Phone" type="string" length="50" not-null="false">
+      <column name="Phone" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="Fax" type="string" length="50" not-null="false">
+      <column name="Fax" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="Email" type="string" length="50" not-null="false">
+      <column name="Email" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="ActivityData" table="tblActivity">
+    <id name="Id" column="ActivityId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="ActivityName" type="string" length="100" not-null="true">
+      <column name="ActivityName" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="EmployeeId" type="int" not-null="false">
+      <column name="EmployeeId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ContactId" type="int" not-null="false">
+      <column name="ContactId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="CustomerId" type="int" not-null="false">
+      <column name="CustomerId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ActivityTypeId" type="int" not-null="false">
+      <column name="ActivityTypeId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Notes" type="string" length="500" not-null="false">
+      <column name="Notes" not-null="false" sql-type="nvarchar" length="500" />
+    </property>
+
+    <property name="StartTime" type="DateTime" not-null="false">
+      <column name="StartTime" not-null="false" sql-type="datetime" />
+    </property>
+    <property name="EndTime" type="DateTime" not-null="false">
+      <column name="EndTime" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="TimeSpent" type="decimal" not-null="false">
+      <column name="TimeSpent" not-null="false" sql-type="decimal"/>
+    </property>
+  </class>
+</hibernate-mapping>

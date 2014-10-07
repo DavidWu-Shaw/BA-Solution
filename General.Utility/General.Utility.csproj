@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2667DD9D-D6CB-4648-97C4-3E0BF16A300B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>General.Utility</RootNamespace>
+    <AssemblyName>General.Utility</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\ba.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataValidate\CharSetValidator.cs" />
+    <Compile Include="DataValidate\IntegerDataValidator.cs" />
+    <Compile Include="DataValidate\DataValidateResult.cs" />
+    <Compile Include="DataValidate\DataValidator.cs" />
+    <Compile Include="DataValidate\DateTimeDataValidator.cs" />
+    <Compile Include="DataValidate\DecimalDataValidator.cs" />
+    <Compile Include="DataValidate\FixLengthDataValidator.cs" />
+    <Compile Include="DataValidate\IDataValidator.cs" />
+    <Compile Include="DataValidate\NotEmptyDataValidator.cs" />
+    <Compile Include="DataValidate\ValidationItem.cs" />
+    <Compile Include="Excel\ExcelImportEventArgs.cs" />
+    <Compile Include="Excel\ExcelParseEventArgs.cs" />
+    <Compile Include="Excel\ExcelSheet.cs" />
+    <Compile Include="Excel\ExcelSheetCell.cs" />
+    <Compile Include="Excel\ExcelSheetColumn.cs" />
+    <Compile Include="Excel\ExcelSheetColumnCollection.cs" />
+    <Compile Include="Excel\ExcelSheetRow.cs" />
+    <Compile Include="Excel\ExcelSheetRowValidatingEventArgs.cs" />
+    <Compile Include="Excel\ExcelSheetValidatingEventArgs.cs" />
+    <Compile Include="Excel\ImportFieldMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitConvert.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ba.snk">
+      <Link>ba.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

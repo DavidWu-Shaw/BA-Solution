@@ -1,0 +1,16 @@
+﻿@using SFA.Web.Models
+@model ShippingInfo
+@{
+    ViewBag.Title = "Checkout";
+}
+<h3>
+    Checkout Now</h3>
+Please input shipping information
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    @Html.EditorForModel()
+    <p>
+        <input type="submit" value="Confirm Order" class="actionButton" />
+    </p>
+}

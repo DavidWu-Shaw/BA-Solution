@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62B99E24-7356-464F-8838-EA45CC61E18E}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SFA.Web</RootNamespace>
+    <AssemblyName>SFA.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Reference\Unity\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Reference\Unity\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Reference\Unity\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Reference\Unity\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.ServiceLocatorAdapter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e968e2a8c21f7ff7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Reference\Unity\Microsoft.Practices.Unity.ServiceLocatorAdapter.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\Converters\ContactContactMethodConverter.cs" />
+    <Compile Include="Areas\Admin\Controllers\Converters\ContactConverter.cs" />
+    <Compile Include="Areas\Admin\Controllers\Converters\ProductConverter.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HeaderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InstanceController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Models\BaseViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ListViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\InstanceViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\ProductListViewModel.cs" />
+    <Compile Include="Common\Binders\CartModelBinder.cs" />
+    <Compile Include="Common\Binders\UserContextModelBinder.cs" />
+    <Compile Include="Common\PagingInfo.cs" />
+    <Compile Include="Common\UserContext.cs" />
+    <Compile Include="Common\WebContext.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\HeaderController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\CategoryTreeBuilder.cs" />
+    <Compile Include="Helpers\LocalizationHelper.cs" />
+    <Compile Include="Helpers\RequestHelper.cs" />
+    <Compile Include="Models\BaseViewModel.cs" />
+    <Compile Include="Models\ChangePasswordViewModel.cs" />
+    <Compile Include="Models\Converters\CategoryConverter.cs" />
+    <Compile Include="Models\Converters\ProductToCartItemConverter.cs" />
+    <Compile Include="Models\Converters\ReviewInfoConverter.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\Converters\NewsConverter.cs" />
+    <Compile Include="Models\Converters\ProductInfoConverter.cs" />
+    <Compile Include="Models\ProductExplorerViewModel.cs" />
+    <Compile Include="Models\ProductListViewModel.cs" />
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\RegisterViewModel.cs" />
+    <Compile Include="Models\ShippingInfo.cs" />
+    <Compile Include="Models\SignInViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="MvcExtensions\ActionFilters\LocalizationAttribute.cs" />
+    <Compile Include="MvcExtensions\HtmlHelperExtention.cs" />
+    <Compile Include="MvcExtensions\TreeViewHtmlHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\main.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\UserSignInPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\ChangeUserProfile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Component\Framework.Component.csproj">
+      <Project>{93120771-1b65-4faa-ac3c-40530ce17e53}</Project>
+      <Name>Framework.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Core\Framework.Core.csproj">
+      <Project>{75DCC424-2F1B-4EC9-9645-B0004FC69DFD}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Data.Ado\Framework.Data.Ado.csproj">
+      <Project>{E283209E-BA9B-4557-AA44-FC29DBADC77B}</Project>
+      <Name>Framework.Data.Ado</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Data\Framework.Data.csproj">
+      <Project>{22B17D86-0279-49FD-B898-1502F3DDD62B}</Project>
+      <Name>Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Globalization\Framework.Globalization.csproj">
+      <Project>{1DDCC7BF-E63E-4541-A14A-618A5C4E038D}</Project>
+      <Name>Framework.Globalization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Notification\Framework.Notification.csproj">
+      <Project>{81327380-EFF9-4D97-BCB2-8FE54A70D6BC}</Project>
+      <Name>Framework.Notification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Security\Framework.Security.csproj">
+      <Project>{1E842BF7-9387-40B5-99D8-FAC6C93170B4}</Project>
+      <Name>Framework.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Service\Framework.Service.csproj">
+      <Project>{5576574D-1D5D-4807-9A5E-15235EB50386}</Project>
+      <Name>Framework.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Unity\Framework.Unity.csproj">
+      <Project>{40391796-4F81-4BA0-8166-690346E996B7}</Project>
+      <Name>Framework.Unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.UoW\Framework.UoW.csproj">
+      <Project>{D8708C3D-A34F-49F8-B739-2DD9D92AA5D4}</Project>
+      <Name>Framework.UoW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Validation\Framework.Validation.csproj">
+      <Project>{9F54C29E-23A5-4140-9D36-4E2FB27B62DD}</Project>
+      <Name>Framework.Validation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BA.Core\BA.Core.csproj">
+      <Project>{c5b72aba-8d80-49f0-bad0-94e57315b695}</Project>
+      <Name>BA.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BA.UnityRegistry\BA.UnityRegistry.csproj">
+      <Project>{BC80008C-887C-4B13-8D7A-1D19B9002D3B}</Project>
+      <Name>BA.UnityRegistry</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Component.Dto\CRM.Component.Dto.csproj">
+      <Project>{0F3F7E2D-5783-4B75-B62F-CCFC9FA3BD3D}</Project>
+      <Name>CRM.Component.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Component\CRM.Component.csproj">
+      <Project>{B194A695-9081-4BE7-9EA0-D39666CD783F}</Project>
+      <Name>CRM.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Configuration\CRM.Configuration.csproj">
+      <Project>{288bb1bb-7e2e-4fc2-abb1-26f88859598c}</Project>
+      <Name>CRM.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Core\CRM.Core.csproj">
+      <Project>{272EB1AE-3629-4A17-8EF1-E06AE9661CB4}</Project>
+      <Name>CRM.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.Data\CRM.Data.csproj">
+      <Project>{2A05318F-0A50-41D5-A426-6D2DDFCC33CE}</Project>
+      <Name>CRM.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.ShopComponent.Dto\CRM.ShopComponent.Dto.csproj">
+      <Project>{2D6A78D6-CCBF-48BC-868C-9C546BD0D7BD}</Project>
+      <Name>CRM.ShopComponent.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRM.ShopComponent\CRM.ShopComponent.csproj">
+      <Project>{239D0212-AFDB-4893-B356-EB04E6FAD901}</Project>
+      <Name>CRM.ShopComponent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup.Component.Dto\Setup.Component.Dto.csproj">
+      <Project>{A5E017D7-9A31-4E26-9BDB-6D055565252D}</Project>
+      <Name>Setup.Component.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup.Component\Setup.Component.csproj">
+      <Project>{EBB219DC-165C-40A2-B6F3-845D300FCDCF}</Project>
+      <Name>Setup.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup.Configuration\Setup.Configuration.csproj">
+      <Project>{f41abc5d-a37e-4121-aaa6-7999844f223f}</Project>
+      <Name>Setup.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup.Core\Setup.Core.csproj">
+      <Project>{B004F770-F70D-4161-AF5E-476CF799973A}</Project>
+      <Name>Setup.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup.Data\Setup.Data.csproj">
+      <Project>{E4333B43-B11A-4E5D-B552-28E943CBCB52}</Project>
+      <Name>Setup.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SubjectEngine\SubjectEngine.Component.Dto\SubjectEngine.Component.Dto.csproj">
+      <Project>{DEE655C4-B3E6-477E-B003-0E852BC5C290}</Project>
+      <Name>SubjectEngine.Component.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SubjectEngine\SubjectEngine.Component\SubjectEngine.Component.csproj">
+      <Project>{9FD3F2CE-1917-411A-B5FC-89BE6CDCF14F}</Project>
+      <Name>SubjectEngine.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SubjectEngine\SubjectEngine.Configuration\SubjectEngine.Configuration.csproj">
+      <Project>{3b64dd30-ea56-47af-8437-47634ca660ad}</Project>
+      <Name>SubjectEngine.Configuration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\SignIn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Header\Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\News\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\LanguageMenuPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\Explorer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\CategoryTreePartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cart\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\ProductList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\ProductSummary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\ReviewListPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Header\Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\InstanceListPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\InstanceEditPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\InstanceDetailPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\InstanceList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\InstanceDetail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Shared\InstanceEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\QuoteRequest.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\QuoteComplete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Product\QuoteConfirm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cart\Summary.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cart\Checkout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Cart\CheckoutCompleted.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53951</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/MvcWeb</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

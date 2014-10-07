@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="BA.RestService.Global" Language="C#" %>

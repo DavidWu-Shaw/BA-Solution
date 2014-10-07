@@ -1,0 +1,33 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_TestService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="ProductWebServiceSoap" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+            <customBinding>
+                <binding name="CustomBinding_ProductService">
+                    <binaryMessageEncoding />
+                    <httpTransport maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" />
+                </binding>
+            </customBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://localhost/TelerikTest/WebServices/TestService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_TestService"
+                contract="TestService.TestService" name="BasicHttpBinding_TestService" />
+            <endpoint address="http://localhost/TelerikTest/WebServices/ProductService.svc"
+                binding="customBinding" bindingConfiguration="CustomBinding_ProductService"
+                contract="ProductService.ProductService" name="CustomBinding_ProductService" />
+            <endpoint address="http://localhost/TelerikTest/WebServices/ProductWebService.asmx"
+                binding="basicHttpBinding" bindingConfiguration="ProductWebServiceSoap"
+                contract="ProductWebService.ProductWebServiceSoap" name="ProductWebServiceSoap" />
+        </client>
+    </system.serviceModel>
+</configuration>

@@ -1,0 +1,7 @@
+﻿@using CRM.ShopComponent.Dto
+@model IEnumerable<ProductInfoDto>
+
+@foreach (var item in Model)
+{
+    Html.RenderPartial("ProductSummary", item);
+}

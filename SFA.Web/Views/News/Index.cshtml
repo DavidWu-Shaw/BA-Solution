@@ -1,0 +1,31 @@
+﻿@using CRM.Component.Dto
+@using SFA.Web.Common
+@using SFA.Web.Controllers
+
+@model IEnumerable<NewsDto>
+           
+@{
+    ViewBag.Title = @Html.Localize("News_Index_Title", "News List");
+}
+
+<h3>News List</h3>
+
+@foreach (var item in Model)
+{ 
+    <div>
+        <h3>@item.Title</h3>
+        @item.IssuedTime.ToString(WebContext.Current.ApplicationOption.DateTimeFormat)
+        <br />
+        @if (item.Content.Length < WebContext.Current.ApplicationOption.NewsContentBriefLength)
+        {
+            @item.Content;
+        }
+        else
+        {
+            @item.Content.Substring(0, WebContext.Current.ApplicationOption.NewsContentBriefLength);
+            <br />
+            @Html.ActionLink(@Html.Localize("News_Index_ReadMore", "Read more ..."), NewsController.DetailAction, new { id = item.Id })
+        }
+        <hr />
+    </div>
+}

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="SubjectData" table="tblSubject">
+    <id name="Id" column="SubjectId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="MasterSubjectId" type="int" not-null="false">
+      <column name="MasterSubjectId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="SubjectType" type="string" length="50" not-null="true">
+      <column name="SubjectType" not-null="true" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="SubjectLabel" type="string" length="50" not-null="false">
+      <column name="SubjectLabel" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="SubjectIdField" type="string" length="50" not-null="false">
+      <column name="SubjectIdField" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="MasterSubjectIdField" type="string" length="50" not-null="false">
+      <column name="MasterSubjectIdField" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="Description" type="string" length="100" not-null="false">
+      <column name="Description" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="TableName" type="string" length="50" not-null="false">
+      <column name="TableName" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="ManageUrl" type="string" length="100" not-null="false">
+      <column name="ManageUrl" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="EditUrl" type="string" length="100" not-null="false">
+      <column name="EditUrl" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="ListUrl" type="string" length="100" not-null="false">
+      <column name="ListUrl" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="ImportUrl" type="string" length="100" not-null="false">
+      <column name="ImportUrl" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="AllowListImport" type="bool" not-null="false">
+      <column name="AllowListImport" not-null="false" sql-type="bit" length="1" />
+    </property>
+    <property name="AllowListFiltering" type="bool" not-null="false">
+      <column name="AllowListFiltering" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="IsAddInGrid" type="bool" not-null="false">
+      <column name="IsAddInGrid" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="IsGridInFormEdit" type="bool" not-null="false">
+      <column name="IsGridInFormEdit" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="AllowListAdd" type="bool" not-null="false">
+      <column name="AllowListAdd" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="AllowListEdit" type="bool" not-null="false">
+      <column name="AllowListEdit" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="AllowListDelete" type="bool" not-null="false">
+      <column name="AllowListDelete" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <bag name="SubjectFieldsData" cascade="all-delete-orphan" inverse="true">
+      <key column="SubjectId" />
+      <one-to-many class="SubjectFieldData"/>
+    </bag>
+
+    <bag name="SubjectLanguagesData" cascade="all-delete-orphan" inverse="true">
+      <key column="SubjectId" />
+      <one-to-many class="SubjectLanguageData"/>
+    </bag>
+
+    <bag name="SubjectLayoutsData" cascade="all-delete-orphan" inverse="true" >
+			<key>
+				<column name="SubjectId" not-null="true"/>
+			</key>
+			<one-to-many class="SubjectLayoutData"/>
+		</bag>
+
+    <bag name="SubjectChildListsData" cascade="all-delete-orphan" inverse="true" >
+      <key>
+        <column name="SubjectId" not-null="true"/>
+      </key>
+      <one-to-many class="SubjectChildListData"/>
+    </bag>
+
+    <bag name="SubjectInstancesData" cascade="all-delete-orphan" inverse="true" >
+			<key>
+				<column name="SubjectId" not-null="true"/>
+			</key>
+			<one-to-many class="SubjectInstanceData"/>
+		</bag>
+
+  </class>
+
+  <sql-query name="GetSubjectFieldInfosData">
+    <return class="SubjectFieldInfoData" />
+
+    <![CDATA[
+    exec dbo.GetSubjectFieldInfoByTable :subjectId
+    ]]>
+
+  </sql-query>
+
+</hibernate-mapping>

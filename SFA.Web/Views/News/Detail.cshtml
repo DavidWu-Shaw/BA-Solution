@@ -1,0 +1,14 @@
+﻿@using CRM.Component.Dto
+@using SFA.Web.Common
+@model NewsDto
+@{
+    ViewBag.Title = "News Detail";
+}
+<h3>
+    News Detail</h3>
+<div>
+    <h3>@Model.Title</h3>
+    @Model.IssuedTime.ToString(WebContext.Current.ApplicationOption.DateTimeFormat)
+    <br />
+    @Model.Content;
+</div>

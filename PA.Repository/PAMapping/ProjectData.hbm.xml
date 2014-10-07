@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="PA.Data" namespace="PA.Data">
+  <class name="ProjectData" table="tblProject">
+    <id name="Id" column="ProjectId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Code" column="Code" />
+    <property name="Name" column="Name" />
+
+    <property name="Description" column="Description" />
+
+    <property name="IssuedById" type="int" not-null="false">
+      <column name="IssuedById" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IssuedDate" column="IssuedDate" />
+
+    <property name="ParentProjectId" type="int" not-null="false">
+      <column name="ParentProjectId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ModelStartDate" column="ModelStartDate" />
+
+    <property name="ModelEndDate" column="ModelEndDate" />
+
+    <property name="PlannedStartDate" column="PlannedStartDate" />
+
+    <property name="PlannedEndDate" column="PlannedEndDate" />
+
+    <property name="TargetTypeId" column="TargetTypeId" />
+
+    <property name="TargetId" type="int" not-null="false">
+      <column name="TargetId" not-null="false" sql-type="int" />
+    </property>
+
+    <bag name="ProjectMembersData" cascade="all-delete-orphan" inverse="true" >
+      <key column="ProjectId" />
+      <one-to-many class="ProjectMemberData"/>
+    </bag>
+
+    <bag name="ProjectDocumentsData" cascade="all-delete-orphan" inverse="true" >
+      <key column="ProjectId" />
+      <one-to-many class="ProjectDocumentData"/>
+    </bag>
+
+    <bag name="ProjectTasksData" cascade="all-delete-orphan" inverse="true">
+      <key column="ProjectId" />
+      <one-to-many class="TaskData"/>
+    </bag>
+  </class>
+
+  <sql-query name="GetProjectsByUser">
+    <return class="ProjectData" />
+    select tblproject.* from tblproject
+    inner join tblprojectmember on tblproject.projectid = tblprojectmember.projectid
+    where tblprojectmember.memberid = :userid
+  </sql-query>
+</hibernate-mapping>

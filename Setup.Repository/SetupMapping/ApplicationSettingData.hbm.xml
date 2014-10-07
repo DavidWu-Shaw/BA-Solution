@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Setup.Data" namespace="Setup.Data">
+  <class name="ApplicationSettingData" table="tblApplicationSetting">
+    <id name="Id" column="ApplicationSettingId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="SettingKey" type="string" length="50" not-null="true">
+      <column name="SettingKey" not-null="true" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="SettingValue" type="string" length="100" not-null="false">
+      <column name="SettingValue" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+  </class>
+</hibernate-mapping>

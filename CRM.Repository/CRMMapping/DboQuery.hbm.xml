@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+
+  <sql-query name="GetTopicBriefInfo">
+    <return class="TopicBriefInfoData" />
+    <![CDATA[
+    exec GetTopicBriefInfo :TopicId
+    ]]>
+  </sql-query>
+
+  <sql-query name="GetTopicInfoList">
+    <return class="TopicInfoData" />
+    <![CDATA[
+    exec GetTopicInfoList :ForumId, :UserId, :KeyWord
+    ]]>
+  </sql-query>
+
+  <sql-query name="GetPostInfoList">
+    <return class="PostInfoData" />
+    <![CDATA[
+    exec GetPostInfoList :TopicId, :UserId
+    ]]>
+  </sql-query>
+
+  <sql-query name="GetReviewInfoList">
+    <return class="ReviewInfoData" />
+    <![CDATA[
+    exec GetReviewInfoList :ObjectId, :ObjectTypeId
+    ]]>
+  </sql-query>
+
+  <sql-query name="GetOrderBriefInfoList">
+    <return class="OrderBriefInfoData" />
+    <![CDATA[
+    exec GetOrderBriefInfoList :SupplierId, :CustomerId, :StatusId, :OrderNumber
+    ]]>
+  </sql-query>
+
+  <sql-query name="GetOrdersInProcess">
+    <return class="OrderBriefInfoData" />
+    <![CDATA[
+    exec GetOrdersInProcess :SupplierId, :CustomerId
+    ]]>
+  </sql-query>
+
+  <sql-query name="GetOrderInfo">
+    <return class="OrderInfoData" />
+    <![CDATA[
+    exec GetOrderInfo :OrderId, :OrderNumber
+    ]]>
+  </sql-query>
+
+  <sql-query name="GetOrderItemInfoList">
+    <return class="OrderItemInfoData" />
+    <![CDATA[
+    exec GetOrderItemInfoList :OrderId
+    ]]>
+  </sql-query>
+
+  <sql-query name="GetScheduleEventsByEmployee">
+    <return class="ScheduleEventData" />
+    <![CDATA[
+    exec GetScheduleEventsByEmployee :EmployeeId
+    ]]>
+  </sql-query>
+
+  <sql-query name="AddOrder">
+    <return class="OrderData" />
+    <![CDATA[
+    exec spNewSFA_AddOrder :shipToId, :dateShipBy, :dateCancelBy, :sellingPeriodId, :customerPO, :notes, :message, :CieDivisionId, :OrderStateId
+    ]]>
+  </sql-query>
+
+  <sql-query name="AddOrderItem">
+    <return class="OrderItemData" />
+    <![CDATA[
+    exec spNewSFA_AddOrderItem :orderId, :orderStateId, :productId, :productColorId, :WarehouseProductDetailId, :categoryId, :discount, :discountTypeId,
+    :qty1,:qty2,:qty3,:qty4,:qty5,:qty6,:qty7,:qty8,:qty9,:qty10,:qty11,:qty12,:qty13,:qty14,:qty15,:qty16,:qty17,:qty18,:qty19,:qty20,
+    :price1,:price2,:price3,:price4,:price5,:price6,:price7,:price8,:price9,:price10,:price11,:price12,:price13,:price14,:price15,:price16,:price17,:price18,:price19,:price20
+    ]]>
+  </sql-query>
+
+</hibernate-mapping>

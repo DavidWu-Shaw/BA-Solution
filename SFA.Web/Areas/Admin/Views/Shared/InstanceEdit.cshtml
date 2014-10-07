@@ -1,0 +1,33 @@
+﻿@using Framework.Core
+@using SubjectEngine.Component.Dto
+@using SFA.Web.Common
+@using Framework.Core.Helpers
+@using SubjectEngine.Core
+@model SFA.Web.Areas.Admin.Models.InstanceViewModel
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = Model.Subject.GetSubjectLabelByLanguage(Model.CurrentLanguageId) + " Edit";
+}
+<h3>@ViewBag.Title: @Model.Instance.Display</h3>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Save" />
+    @Html.ActionLink("Cancel", "Detail", new { id = Model.Instance.Id })
+    @Html.ValidationSummary()
+    <table>
+        @foreach (var field in Model.Subject.SubjectFields)
+        {
+            if (field.RowIndex > 0 && field.ColIndex > 0)
+            {
+            <tr>
+                <td>
+                    @field.GetFieldLabelByLanguage(Model.CurrentLanguageId)
+                </td>
+                <td>
+                    @Html.TextBoxFor(o => field.FieldKey)
+                </td>
+            </tr>
+            }
+        }
+    </table>
+}

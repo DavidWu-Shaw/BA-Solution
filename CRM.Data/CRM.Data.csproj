@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A05318F-0A50-41D5-A426-6D2DDFCC33CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CRM.Data</RootNamespace>
+    <AssemblyName>CRM.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\ba.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CategoryData.cs" />
+    <Compile Include="CatalogData.cs" />
+    <Compile Include="QuoteData.cs" />
+    <Compile Include="QuoteLineData.cs" />
+    <Compile Include="SupplierInfoData.cs" />
+    <Compile Include="Criterias\SupplierCriteria.cs" />
+    <Compile Include="ReviewInfoData.cs" />
+    <Compile Include="ReviewData.cs" />
+    <Compile Include="TopicBriefInfoData.cs" />
+    <Compile Include="Criterias\PostCriteria.cs" />
+    <Compile Include="Criterias\TopicCriteria.cs" />
+    <Compile Include="PostInfoData.cs" />
+    <Compile Include="TopicInfoData.cs" />
+    <Compile Include="NewsData.cs" />
+    <Compile Include="PostData.cs" />
+    <Compile Include="TopicData.cs" />
+    <Compile Include="Criterias\OrderCriteria.cs" />
+    <Compile Include="Criterias\ProductCriteria.cs" />
+    <Compile Include="OrderBriefInfoData.cs" />
+    <Compile Include="OrderInfoData.cs" />
+    <Compile Include="OrderItemInfoData.cs" />
+    <Compile Include="ProductInfoData.cs" />
+    <Compile Include="EmployeeData.cs" />
+    <Compile Include="TransactionItemData.cs" />
+    <Compile Include="TransactionData.cs" />
+    <Compile Include="ShipToData.cs" />
+    <Compile Include="SellingPeriodData.cs" />
+    <Compile Include="CustomerData.cs" />
+    <Compile Include="ActivityData.cs" />
+    <Compile Include="ContactData.cs" />
+    <Compile Include="ContactContactMethodData.cs" />
+    <Compile Include="DocumentData.cs" />
+    <Compile Include="LeadData.cs" />
+    <Compile Include="OpportunityData.cs" />
+    <Compile Include="OrderData.cs" />
+    <Compile Include="OrderItemData.cs" />
+    <Compile Include="ProductData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduleEventData.cs" />
+    <Compile Include="SupplierData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Core\Framework.Core.csproj">
+      <Project>{75DCC424-2F1B-4EC9-9645-B0004FC69DFD}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Data\Framework.Data.csproj">
+      <Project>{22B17D86-0279-49FD-B898-1502F3DDD62B}</Project>
+      <Name>Framework.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ba.snk">
+      <Link>ba.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

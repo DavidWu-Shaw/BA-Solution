@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Setup.Data" namespace="Setup.Data">
+  <class name="SetupMenuData" table="tblSetupMenu">
+    <id name="Id" column="SetupMenuId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Name" type="string" length="50" not-null="true">
+      <column name="Name" not-null="true" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="ParentMenuId" type="int" not-null="false">
+      <column name="ParentMenuId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="MenuText" type="string" length="100" not-null="false">
+      <column name="MenuText" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Tooltip" type="string" length="200" not-null="false">
+      <column name="Tooltip" not-null="false" sql-type="nvarchar" length="200" />
+    </property>
+
+    <property name="NavigateUrl" type="string" length="100" not-null="false">
+      <column name="NavigateUrl" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Sort" type="int" not-null="false">
+      <column name="Sort" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="MenuTypeId" type="int" not-null="false">
+      <column name="MenuTypeId" not-null="false" sql-type="int" />
+    </property>
+  </class>
+</hibernate-mapping>

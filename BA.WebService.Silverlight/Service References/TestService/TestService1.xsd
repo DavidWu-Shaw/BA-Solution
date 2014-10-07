@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CRM.ShopComponent.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CRM.ShopComponent.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProductInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductInfoDto" nillable="true" type="tns:ProductInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductInfoDto" nillable="true" type="tns:ArrayOfProductInfoDto" />
+  <xs:complexType name="ProductInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryId" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="CategoryText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsDiscontinued" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfRatings" type="xs:int" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductId" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Rating" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Reviews" nillable="true" type="tns:ArrayOfReviewInfoDto" />
+      <xs:element minOccurs="0" name="SellingPeriodEndTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SellingPeriodId" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="SellingPeriodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SellingPeriodStartTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Sketch" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="SupplierId" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="SupplierName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductInfoDto" nillable="true" type="tns:ProductInfoDto" />
+  <xs:complexType name="ArrayOfReviewInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReviewInfoDto" nillable="true" type="tns:ReviewInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReviewInfoDto" nillable="true" type="tns:ArrayOfReviewInfoDto" />
+  <xs:complexType name="ReviewInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Content" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssuedById" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="IssuedTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ObjectId" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Rating" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReviewId" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReviewInfoDto" nillable="true" type="tns:ReviewInfoDto" />
+  <xs:complexType name="ArrayOfSupplierInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SupplierInfoDto" nillable="true" type="tns:SupplierInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSupplierInfoDto" nillable="true" type="tns:ArrayOfSupplierInfoDto" />
+  <xs:complexType name="SupplierInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressLine1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressLine2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AllowBringWine" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowReserve" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowTakeOut" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactEmail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactFax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactPerson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DayEndTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DayStartTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Logo" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NationId" type="xs:int" />
+      <xs:element minOccurs="0" name="NationText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfRatings" type="xs:int" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="tns:ArrayOfProductInfoDto" />
+      <xs:element minOccurs="0" name="Rating" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Reviews" nillable="true" type="tns:ArrayOfReviewInfoDto" />
+      <xs:element minOccurs="0" name="SupplierId" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="Website" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SupplierInfoDto" nillable="true" type="tns:SupplierInfoDto" />
+</xs:schema>

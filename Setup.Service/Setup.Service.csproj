@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0AE1F921-C6AA-46F1-896E-6954B4D5F295}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Setup.Service</RootNamespace>
+    <AssemblyName>Setup.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\ba.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationSettingService.cs" />
+    <Compile Include="AdministratorService.cs" />
+    <Compile Include="DataPhraseService.cs" />
+    <Compile Include="LanguagePhraseService.cs" />
+    <Compile Include="LanguageService.cs" />
+    <Compile Include="DomainService.cs" />
+    <Compile Include="NotificationTemplateService.cs" />
+    <Compile Include="SetupMenuService.cs" />
+    <Compile Include="MainMenuService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Core\Framework.Core.csproj">
+      <Project>{75DCC424-2F1B-4EC9-9645-B0004FC69DFD}</Project>
+      <Name>Framework.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Data\Framework.Data.csproj">
+      <Project>{22B17D86-0279-49FD-B898-1502F3DDD62B}</Project>
+      <Name>Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Security\Framework.Security.csproj">
+      <Project>{1E842BF7-9387-40B5-99D8-FAC6C93170B4}</Project>
+      <Name>Framework.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.Service\Framework.Service.csproj">
+      <Project>{5576574D-1D5D-4807-9A5E-15235EB50386}</Project>
+      <Name>Framework.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Framework\Framework Solution\Framework.UoW\Framework.UoW.csproj">
+      <Project>{D8708C3D-A34F-49F8-B739-2DD9D92AA5D4}</Project>
+      <Name>Framework.UoW</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup.Core\Setup.Core.csproj">
+      <Project>{B004F770-F70D-4161-AF5E-476CF799973A}</Project>
+      <Name>Setup.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup.Data\Setup.Data.csproj">
+      <Project>{E4333B43-B11A-4E5D-B552-28E943CBCB52}</Project>
+      <Name>Setup.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup.Repository.Contract\Setup.Repository.Contract.csproj">
+      <Project>{48EBC3D7-6D36-4016-8492-279869A6515D}</Project>
+      <Name>Setup.Repository.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup.Service.Contract\Setup.Service.Contract.csproj">
+      <Project>{3484B417-817C-41D3-9D0D-CB5361846FCC}</Project>
+      <Name>Setup.Service.Contract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ba.snk">
+      <Link>ba.snk</Link>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="DEntityData" table="tblEntity">
+    <id name="Id" column="EntityId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Code" type="string" length="100" not-null="true">
+      <column name="Code" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Description" type="string" length="100" not-null="false">
+      <column name="Description" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="EntityTypeId" type="int" not-null="false">
+      <column name="EntityTypeId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IsBuiltIn" type="bool" not-null="false">
+      <column name="IsBuiltIn" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="AllowAddItem" type="bool" not-null="false">
+      <column name="AllowAddItem" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="AllowEditItem" type="bool" not-null="false">
+      <column name="AllowEditItem" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="AllowDeleteItem" type="bool" not-null="false">
+      <column name="AllowDeleteItem" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <bag name="DEntityItemsData" cascade="all-delete-orphan" inverse="true">
+      <key>
+        <column name="EntityId" not-null="true"/>
+      </key>
+      <one-to-many class="DEntityItemData"/>
+    </bag>
+
+  </class>
+</hibernate-mapping>

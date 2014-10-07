@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true"
+    CodeBehind="SetupMasterPage.master.cs" Inherits="BA.Web.MasterPages.SetupMasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadC" runat="server">
+    <asp:ContentPlaceHolder ID="SetMHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainC" runat="server">
+    <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" runat="server">
+    </telerik:RadStyleSheetManager>
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+    </telerik:RadScriptManager>
+    <telerik:RadSplitter runat="server" ID="RadSplitter1" Orientation="Vertical" Height="680px"
+        Width="100%">
+        <telerik:RadPane ID="RadPane1" runat="server" Width="220px" BackColor="LightGrey">
+            <table cellpadding="1" cellspacing="0" style="width: 100%;">
+                <tr>
+                    <td class="DarkTitle">
+                        <asp:Label ID="lblTitle" runat="server">
+                        </asp:Label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Menu ID="SetupMenu" runat="server" DynamicHorizontalOffset="4" Font-Names="Verdana"
+                            Font-Size="1.2em" ForeColor="#7C6F57" Orientation="Vertical" StaticSubMenuIndent="10px"
+                            EnableViewState="false">
+                            <DynamicHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicMenuStyle BackColor="#F7F6F3" />
+                            <DynamicSelectedStyle BackColor="#5D7B9D" />
+                            <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticSelectedStyle BackColor="#5D7B9D" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+            </table>
+        </telerik:RadPane>
+        <telerik:RadSplitBar ID="RadSplitBar1" runat="server" CollapseMode="Forward">
+        </telerik:RadSplitBar>
+        <telerik:RadPane ID="RadPane2" runat="server" Width="100%">
+            <asp:ContentPlaceHolder ID="SetMBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </telerik:RadPane>
+    </telerik:RadSplitter>
+</asp:Content>

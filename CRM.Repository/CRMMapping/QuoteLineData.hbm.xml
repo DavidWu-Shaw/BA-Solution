@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="QuoteLineData" table="tblQuoteLine">
+    <id name="Id" column="QuoteLineId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <many-to-one name="Parent" class="QuoteData" column="QuoteId" not-null="true"/>
+
+    <property name="ProductId" type="int" not-null="false">
+      <column name="ProductId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="TargetPrice" type="decimal" not-null="false">
+      <column name="TargetPrice" not-null="false" sql-type="decimal"  />
+    </property>
+
+    <property name="Quantity" type="int" not-null="false">
+      <column name="Quantity" not-null="false" sql-type="int"/>
+    </property>
+  </class>
+</hibernate-mapping>

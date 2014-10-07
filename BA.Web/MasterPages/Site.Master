@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="BA.Web.MasterPages.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="../Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/main.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Page-Exit" content="BlendTrans(Duration=0.1)" />
+    <meta name="description" content="Restaraunt online ordering website." />
+    <meta name="keywords" content="Restaraunt, Online, Ordering, Online Shopping, Food, Meal, Montreal, Catalog" />
+    <asp:ContentPlaceHolder ID="HeadC" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+    <div id="divPage" runat="server" class="Fpage">
+        <div>
+            <table style="width: 100%; padding: 2px; background-color: #C0C0C0">
+                <tr>
+                    <td align="left" style="width: 40">
+                        <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Images/SiteLogo.jpg" Height="40px"
+                            Width="40px" />
+                    </td>
+                    <td align="left" style="white-space: nowrap;">
+                        <asp:Label ID="lblAppName" runat="server" ForeColor="Gray" Font-Bold="true" Font-Size="1.4em" />
+                    </td>
+                    <td align="right" style="width: 100%">
+                        <table cellspacing="2" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <asp:Label ID="lblUser" runat="server" CssClass="devTextBold">
+                                    </asp:Label>
+                                </td>
+                                <td style="width: 6px; white-space: nowrap">
+                                </td>
+                                <td style="white-space: nowrap">
+                                    <asp:HyperLink ID="hlSetup" runat="server" CssClass="devTextBold" NavigateUrl="javascript:{0}"></asp:HyperLink>
+                                </td>
+                                <td style="width: 6px; white-space: nowrap">
+                                    <asp:Label ID="spSetup" runat="server" Text="|">
+                                    </asp:Label>
+                                </td>
+                                <td style="white-space: nowrap">
+                                    <asp:HyperLink ID="hlMyCart" runat="server" CssClass="devTextBold" NavigateUrl="javascript:{0}"></asp:HyperLink>
+                                </td>
+                                <td style="width: 4px; white-space: nowrap">
+                                    <asp:Label ID="spMyCart" runat="server" Text="|">
+                                    </asp:Label>
+                                </td>
+                                <td style="white-space: nowrap">
+                                    <asp:HyperLink ID="hlLogout" runat="server" CssClass="devTextBold" NavigateUrl="javascript:{0}"></asp:HyperLink>
+                                </td>
+                                <td style="width: 6px; white-space: nowrap">
+                                    <asp:Label ID="Label2" runat="server" Text="|">
+                                    </asp:Label>
+                                </td>
+                                <td align="right">
+                                    <asp:Menu ID="LangMenu" runat="server" Orientation="Horizontal" CssClass="devTextBold"
+                                        OnMenuItemClick="LangMenu_MenuItemClick">
+                                        <StaticMenuItemStyle HorizontalPadding="4px" />
+                                    </asp:Menu>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr style="height: 24px">
+                    <td colspan="3">
+                        <asp:Menu ID="NavMenu" runat="server" Font-Names="Verdana" Font-Size="1.3em" ForeColor="#7C6F57"
+                            Orientation="Horizontal">
+                            <StaticHoverStyle BackColor="#7C6F57" ForeColor="White" />
+                            <StaticMenuItemStyle HorizontalPadding="10px" />
+                            <StaticSelectedStyle BackColor="#5D7B9D" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="main">
+            <div style="margin: 6px 10px 10px 12px;">
+                <asp:SiteMapPath ID="smp" runat="server" Font-Names="Verdana" PathSeparator=" > ">
+                    <RootNodeStyle Font-Size="1.2em" ForeColor="DarkSlateBlue" />
+                    <NodeStyle Font-Size="1.2em" ForeColor="DarkSlateBlue" />
+                    <CurrentNodeStyle Font-Size="1.2em" ForeColor="DarkSlateBlue" />
+                </asp:SiteMapPath>
+            </div>
+            <asp:ContentPlaceHolder ID="MainC" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+            <table cellspacing="2" cellpadding="0" width="100%">
+                <tr>
+                    <td align="center">
+                        <table cellspacing="2" cellpadding="0">
+                            <tr align="center">
+                                <td style="white-space: nowrap">
+                                    <asp:HyperLink ID="hlAbout" runat="server" CssClass="devTextBold" NavigateUrl="javascript:{0}"
+                                        Text="About Us"></asp:HyperLink>
+                                </td>
+                                <td style="width: 6px; white-space: nowrap">
+                                    <asp:Label ID="Label1" runat="server" Text="|">
+                                    </asp:Label>
+                                </td>
+                                <td style="white-space: nowrap">
+                                    <asp:HyperLink ID="hlContact" runat="server" CssClass="devTextBold" NavigateUrl="javascript:{0}"
+                                        Text="Contact Us"></asp:HyperLink>
+                                </td>
+                                <td style="width: 6px; white-space: nowrap">
+                                    <asp:Label ID="spContact" runat="server" Text="|">
+                                    </asp:Label>
+                                </td>
+                                <td style="white-space: nowrap">
+                                    <asp:HyperLink ID="hlHelp" runat="server" CssClass="devTextBold" NavigateUrl="javascript:{0}"
+                                        Text="Help Center"></asp:HyperLink>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                Powered by New Concept Apps Inc. <a href="http://www.newconceptapps.com" style="font-size: 1.1em;">
+                    www.newconceptapps.com</a>
+            </p>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

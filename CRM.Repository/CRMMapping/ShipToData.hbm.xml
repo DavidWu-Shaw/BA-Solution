@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="ShipToData" table="tblShipTo">
+    <id name="Id" column="ShipToId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Code" type="string" length="50" not-null="false">
+      <column name="Code" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="CustomerId" type="int" not-null="false">
+      <column name="CustomerId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ContactPerson" type="string" length="100" not-null="false">
+      <column name="ContactPerson" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="ContactPhone" type="string" length="20" not-null="false">
+      <column name="ContactPhone" not-null="false" sql-type="nvarchar" length="20" />
+    </property>
+
+    <property name="AddressLine1" type="string" length="100" not-null="false">
+      <column name="AddressLine1" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+    <property name="AddressLine2" type="string" length="100" not-null="false">
+      <column name="AddressLine2" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+    <property name="Country" type="string" length="50" not-null="false">
+      <column name="Country" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="CountryState" type="string" length="50" not-null="false">
+      <column name="CountryState" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="City" type="string" length="50" not-null="false">
+      <column name="City" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="ZipCode" type="string" length="20" not-null="false">
+      <column name="ZipCode" not-null="false" sql-type="nvarchar" length="20" />
+    </property>
+  </class>
+</hibernate-mapping>

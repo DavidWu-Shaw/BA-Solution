@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="PA.Data" namespace="PA.Data">
+  <class name="DocumentData" table="tblDocument">
+    <id name="Id" column="DocumentId" type="int" unsaved-value="-1">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+		<property name="Code" column="Code" />
+
+		<property name="Content" column="Content" />
+
+		<property name="PublishedMode" column="PublishedMode" />
+
+		<property name="Thumbnail" column="Thumbnail" />
+
+		<property name="Notes" column="Notes" />
+
+		<property name="TypeId" column="TypeId" />
+
+    <property name="IssuedById" type="int" not-null="false">
+      <column name="IssuedById" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IssuedDate" column="IssuedDate" />
+
+		<property name="Source" column="Source" />
+
+		<property name="Description" column="Description" />
+
+		<property name="OriginalCopyId" column="OriginalCopyId" />
+
+		<property name="Extension" column="Extension" />
+
+
+    <!-- [END PROPERTIES] -->
+
+    <!-- [CHILD COLLECTIONS] -->
+    <!-- [END CHILD COLLECTIONS] -->
+  </class>
+</hibernate-mapping>

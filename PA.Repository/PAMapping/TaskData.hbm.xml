@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="PA.Data" namespace="PA.Data">
+  <class name="TaskData" table="tblTask">
+    <id name="Id" column="TaskId" type="int">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+    <property name="Name" column="Name" />
+
+    <property name="Description" column="Description" />
+
+    <property name="OwnerId" type="int" not-null="false">
+      <column name="OwnerId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Duration" column="Duration" />
+
+    <property name="DueDate" column="DueDate" />
+
+    <property name="PlannedStartDate" column="PlannedStartDate" />
+
+    <property name="ActualStartDate" column="ActualStartDate" />
+
+    <property name="ActualEndDate" column="ActualEndDate" />
+
+    <property name="PhaseId" column="PhaseId" />
+
+    <property name="PriorityId" column="PriorityId" />
+
+    <property name="TimingDays" column="TimingDays" />
+
+    <property name="TimingBaseTaskId" column="TimingBaseTaskId" />
+
+    <property name="StatusId" column="StatusId" />
+
+    <property name="ToleranceDays" column="ToleranceDays" />
+
+    <property name="ModelStartDate" column="ModelStartDate" />
+
+    <property name="ModelEndDate" column="ModelEndDate" />
+
+    <property name="TypeId" column="TypeId" />
+
+    <property name="TimeRemain" column="TimeRemain" />
+
+    <many-to-one name="Parent" class="ProjectData" column="ProjectId" not-null="true" />
+
+
+    <!-- [END PROPERTIES] -->
+
+    <!-- [CHILD COLLECTIONS] -->
+
+    <bag name="TaskTimesData" cascade="all-delete-orphan" inverse="true" >
+      <key column="TaskId" />
+      <one-to-many class="TaskTimeData"/>
+    </bag>
+
+    <bag name="TaskCommentsData" cascade="all-delete-orphan" inverse="true" >
+      <key column="TaskId" />
+      <one-to-many class="TaskCommentData"/>
+    </bag>
+
+
+    <!-- [END CHILD COLLECTIONS] -->
+  </class>
+
+  <sql-query name="GetTaskByTaskId">
+    <return class="TaskData" />
+    select * from tblTask
+    where TaskId = :taskId
+
+  </sql-query>
+
+  <sql-query name="GetProjectByTaskId">
+    <return class="ProjectData" />
+    select * from tblProject
+    where projectid =
+    (select projectid from tblTask
+    where TaskId = :taskId)
+
+  </sql-query>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="TransactionItemData" table="tblTransactionItem">
+    <id name="Id" column="TransactionItemId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <many-to-one name="Parent" class="TransactionData" column="TransactionId" not-null="true"/>
+
+    <property name="ItemDescription" type="string" length="50" not-null="false">
+      <column name="ItemDescription" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="ProductId" type="int" not-null="false">
+      <column name="ProductId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="Quantity" type="int" not-null="false">
+      <column name="Quantity" not-null="false" sql-type="int"/>
+    </property>
+
+    <property name="UnitPrice" type="decimal" not-null="false">
+      <column name="UnitPrice" not-null="false" sql-type="decimal"  />
+    </property>
+
+    <property name="Amount" type="decimal" not-null="false">
+      <column name="Amount" not-null="false" sql-type="decimal"  />
+    </property>
+  </class>
+</hibernate-mapping>

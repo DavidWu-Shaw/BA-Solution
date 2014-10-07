@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="SubjectLayoutData" table="tblSubjectLayout">
+    <id name="Id" column="SubjectLayoutId" type="int">
+      <generator class="identity" />
+    </id>
+    <!-- [PROPERTIES] -->
+
+    <property name="ItemTypeId" column="ItemTypeId" />
+
+    <property name="SubjectFieldId" type="int" not-null="false">
+      <column name="SubjectFieldId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="SubjectActionId" column="SubjectActionId" />
+
+    <property name="SectionLabel" column="SectionLabel" />
+
+    <property name="RowIndex" column="RowIndex" />
+
+    <property name="CellIndex" column="CellIndex" />
+
+    <many-to-one name="Parent" class="SubjectData" column="SubjectId"/>
+
+
+    <!-- [END PROPERTIES] -->
+
+    <!-- [CHILD COLLECTIONS] -->
+    <!-- [END CHILD COLLECTIONS] -->
+  </class>
+</hibernate-mapping>

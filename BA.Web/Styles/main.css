@@ -1,0 +1,305 @@
+
+SELECT {
+	border: silver 1px groove;
+	font-family: Arial, Courier New, Courier;
+	font-size: 9pt; 
+}
+
+DIV.PageData {
+	margin-top: 8px;
+	margin-left: 4px;
+	width: 772px;
+}
+
+INPUT.textBox, TEXTAREA.textBox {
+	border: silver 1px groove;
+	font-family: Arial, Courier New, Courier;
+	font-size: 9pt;	
+	margin-left: 3px;
+	margin-right: 0px;
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+INPUT.textBoxDisabled, TEXTAREA.textBoxDisabled {
+	border: silver 1px groove;
+	font-family: Arial, Courier New, Courier;
+	font-size: 9pt;	
+	margin-left: 3px;
+	margin-right: 0px;
+	padding-right: 2px;
+	padding-left: 2px;
+	background-color: #ededed;
+}
+
+INPUT.button {
+	background-color: #D0D0D0;
+	border: silver 1px outset;
+	cursor: hand;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8.5pt;
+	height: 20px;
+	width: 125px;
+	margin: 2.5px;
+}
+
+INPUT.buttonSmall {
+	background-color: #D0D0D0;
+	border: silver 1px outset;
+	cursor: hand;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 8.5pt;
+	height: 20px;
+	margin: 2.5px;
+}
+
+SELECT.dropdown {
+	border: silver 1px groove;
+	font-family: Arial, Courier New, Courier;
+	font-size: 9pt;
+	height: 9pt;
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+INPUT.checkbox {
+	margin-top: 0px;
+	margin-bottom: -1px;
+	margin-right: -4px;
+	margin-left: -2px;
+	padding: 0px;
+	width:14px;
+	height:14px;
+}
+
+INPUT.radio {
+	height: 12px;
+	width: 12px;
+	padding: 0px;
+}
+
+TABLE {
+	font-size: 10pt;
+}
+
+TABLE.Header {	
+	background-color: #365FA2;
+	background-image: url('Images/bgGrad.gif');
+	background-repeat: repeat-y;
+	border-bottom: silver 1px solid;
+	border-collapse: collapse;
+	padding: 4px;
+	width: 100%;
+}
+
+TABLE.DataSection {
+	background-color: #EDF0F5;
+	border-top: #91A7C9 1px solid;
+	border-left: #91A7C9 1px solid;
+	border-right: #96ACCE 1px ridge;
+	border-bottom: #91A7C9 1px ridge;
+	padding: 7px;
+	font-size: 8pt;
+}
+
+TABLE.Form {
+	background-color: #EEEEEE;
+	border-top: #AAAAAA 1px solid;
+	border-left: #AAAAAA 1px solid;
+	border-right: #96ACCE 1px ridge;
+	border-bottom: #AAAAAA 1px ridge;
+	padding: 7px;
+	font-size: 8pt;
+}
+
+TABLE.DataGrid {
+	background-color: #FFFFFF;
+	border-collapse: collapse;	
+	padding: 1px;
+	font-size: 8pt;
+	width: 100%;
+}
+
+TR.Header {
+	background-color: #dadada;
+	font-weight: bold;
+	font-size: 10pt;
+	height: 22px;
+	letter-spacing: 2px;
+	padding: 0px;
+}
+
+TR.mouseHover {
+	background-color: #CDD5E5;
+}
+
+DIV.Copyright {
+	color: #303030;
+	font-size: 7pt;
+}
+
+.HeadText {
+	font-family: Arial, Verdana, Helvetica;
+	color: Black;
+	font-size: 16pt;
+}
+
+.HeadSubText {
+	color: #DADADA;
+	font-family: Arial, Verdana, Helvetica;
+	font-size: 12pt;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.ErrorText {
+	color: #CA0000;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+.tbButton
+{
+  border: 2px outset
+}
+
+.tbButtonHover
+{
+	border: 2px inset
+}
+
+.BlueButton
+{
+ background-color: #cdd5e5;
+ color: #000000;
+ height: 16px;
+ width: 16px;
+ text-align: center;
+ border: 1px #000000 solid;
+ padding: 0px;
+ cursor: hand;
+ font-size: 8pt;
+ font-weight: bold;
+ margin-left: 1px;
+ margin-right: 1px;
+ }
+ 
+ .BlueButtonHover
+ {
+ background-color: #365fa2;
+ color: #ffffff;
+ height: 16px;
+ width: 16px;
+ text-align: center;
+ border: 1px #000000 solid;
+ padding: 0px;
+ cursor: hand;
+ font-size: 9pt;
+ font-weight: bold;
+ margin-left: 1px;
+ margin-right: 1px;
+ }
+ 
+.BlueButtonDisabled
+{
+ background-color: #ffffff;
+ color: #000000;
+ height: 16px;
+ width: 16px;
+ text-align: center;
+ border: 1px #000000 solid;
+ padding: 0px;
+ cursor: default;
+ font-size: 8pt;
+ font-weight: bold;
+ margin-left: 1px;
+ margin-right: 1px;
+ }
+
+.basketItem
+{
+	border-top: #9EB0CA 1px solid;
+	font-size: 8pt;	
+}
+
+.SearchPane
+{
+	padding-top: 1px;
+	background-color: #cdd5e5;
+	border-bottom: silver 1px solid;
+	width: 100%;
+}
+
+.ResultPane {
+	background-color: #EDF0F5;
+	border-top: #91A7C9 0px solid;
+	border-left: #91A7C9 0px solid;
+	border-right: #91A7C9 0px solid;
+	border-bottom: 0px;
+	padding: 7px;
+	font-size: 8pt;
+	width: 100%;
+}
+.NavPane {
+	background-color: #EDF0F5;
+	border-top: 0px;
+	border-left: #91A7C9 0px solid;
+	border-right: #91A7C9 0px solid;
+	border-bottom: #91A7C9 1px ridge;
+	height: 20px;
+	font-size: 8pt;
+	width: 100%;
+}
+
+.DataHeader {
+	background-color: #dadada;
+	font-weight: bold;
+	font-size: 7pt;
+	letter-spacing: 1px;
+}
+
+.Label
+{
+	font-family: verdana;
+	font-size: 7.5pt;
+	font-weight: bold;
+}
+.link {
+	color: navy;
+	cursor: hand;
+	text-decoration: underline;
+}
+
+.linkhover {
+	text-decoration: underline;
+	color: navy;
+	cursor: hand;
+}
+
+.HeadText {
+	font-family: Arial, Verdana, Helvetica;
+	color: white;
+	font-size: 16pt;
+}
+
+.HeadSubText {
+	color: #DADADA;
+	font-family: Arial, Verdana, Helvetica;
+	font-size: 12pt;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.thinHeadText {
+	font-family: Arial, Verdana, Helvetica;
+	color: white;
+	font-size: 14pt;
+}
+
+.thinHeadSubText {
+	color: #DADADA;
+	font-family: Arial, Verdana, Helvetica;
+	font-size: 10pt;
+	font-weight: bold;
+	letter-spacing: 2px;
+}

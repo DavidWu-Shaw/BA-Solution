@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Setup.Data" namespace="Setup.Data">
+  <class name="UserData" table="tblUser">
+    <id name="Id" column="UserId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Username" type="string" length="100" not-null="false">
+      <column name="Username" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Email" type="string" length="100" not-null="true">
+      <column name="Email" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+    
+    <property name="Password" type="string" length="100" not-null="false">
+      <column name="Password" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="CreatedDate" type="DateTime" not-null="false">
+      <column name="CreatedDate" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="ModifiedDate" type="DateTime" not-null="false">
+      <column name="ModifiedDate" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="LastConnectDate" type="DateTime" not-null="false">
+      <column name="LastConnectDate" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="DomainId" type="int" not-null="false">
+      <column name="DomainId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IsActive" type="bool" length="1" not-null="false">
+      <column name="IsActive" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="LanguageId" type="int" not-null="false">
+      <column name="LanguageId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="MatchId" type="int" not-null="false">
+      <column name="MatchId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="FullName" type="string" length="100" not-null="false">
+      <column name="FullName" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+  </class>
+</hibernate-mapping>

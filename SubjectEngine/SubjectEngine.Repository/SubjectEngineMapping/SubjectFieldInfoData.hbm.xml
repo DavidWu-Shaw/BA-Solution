@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="SubjectFieldInfoData" mutable="false">
+    <id name="Id" column="ORDINAL_POSITION" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="TableColumn" type="string">
+      <column name="Column_Name" sql-type="nvarchar" />
+    </property>
+
+    <property name="SubjectFieldId" type="int" not-null="false">
+      <column name="SubjectFieldId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="FieldKey" column="FieldKey" />
+
+    <property name="FieldLabel" column="FieldLabel" />
+
+    <property name="HelpText" column="HelpText" />
+
+    <property name="FieldDataTypeId" type="int" not-null="false">
+      <column name="DataTypeId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="PickupEntityId" type="int" not-null="false">
+      <column name="PickupEntityId" not-null="false" sql-type="int" />
+    </property>
+    <property name="LookupSubjectId" type="int" not-null="false">
+      <column name="LookupSubjectId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IsRequired" column="IsRequired" />
+    <property name="IsBuiltIn" column="IsBuiltIn" />
+    <property name="IsReadonly" column="IsReadonly" />
+    <property name="IsShowInGrid" column="IsShowInGrid" />
+    <property name="IsLinkInGrid" column="IsLinkInGrid" />
+
+    <property name="Sort" type="int" not-null="false">
+      <column name="Sort" not-null="false" sql-type="smallint" />
+    </property>
+
+    <property name="RowIndex" type="int" not-null="false">
+      <column name="RowIndex" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ColIndex" type="int" not-null="false">
+      <column name="ColIndex" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="MaxLengthInTable" type="int" not-null="false">
+      <column name="CHARACTER_MAXIMUM_LENGTH" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="MaxLength" type="int" not-null="false">
+      <column name="MaxLength" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="NavigateUrlFormatString" type="string" length="100" not-null="false">
+      <column name="NavigateUrlFormatString" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MasterPages/Site.Master" AutoEventWireup="true"
+    CodeBehind="AppMasterPage.master.cs" Inherits="BA.Web.MasterPages.AppMasterPage" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadC" runat="server">
+    <script type="text/javascript">
+
+        function OnClientUpdated(sender, args) {
+            var record = sender.get_value();
+            if (record != "") {
+                sender.show();
+            }
+            sender.set_value("");
+        }
+
+    </script>
+    <asp:ContentPlaceHolder ID="AppMHead" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainC" runat="server">
+    <telerik:RadStyleSheetManager ID="RadStyleSheetManager1" runat="server">
+    </telerik:RadStyleSheetManager>
+    <telerik:RadScriptManager ID="RadScriptManager1" runat="server">
+    </telerik:RadScriptManager>
+    <telerik:RadNotification ID="RadNotification1" runat="server" Width="380" Height="100"
+        Animation="None" Title="test" EnableRoundedCorners="true" AutoCloseDelay="1000"
+        VisibleTitlebar="true" LoadContentOn="TimeInterval" UpdateInterval="0" OnClientUpdated="OnClientUpdated"
+        OnCallbackUpdate="RadNotification1_CallbackUpdate">
+        <ContentTemplate>
+            <asp:Label ID="lblNotification" runat="server" />
+        </ContentTemplate>
+    </telerik:RadNotification>
+    <asp:ContentPlaceHolder ID="AppMBody" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

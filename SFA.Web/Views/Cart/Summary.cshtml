@@ -1,0 +1,9 @@
+﻿@using CRM.ShopComponent.Dto
+@using SFA.Web.Controllers
+@model CartDto
+@{
+    Layout = null;
+}
+<a href="@Url.Action(CartController.IndexAction, CartController.ControllerName)" title="Total Amount: @Model.TotalAmount.ToString()">
+    Cart Items: @Model.QtyOrderedTotal
+</a>

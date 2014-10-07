@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="SupplierInfoData" table="viewSupplierInfo" mutable="false">
+    <id name="SupplierId" column="SupplierId" type="int">
+    </id>
+
+    <property name="Name" type="string" length="100" not-null="true">
+      <column name="Name" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Address" type="string" length="100" not-null="false">
+      <column name="Address" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+    <property name="Country" type="string" length="50" not-null="false">
+      <column name="Country" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="CountryState" type="string" length="50" not-null="false">
+      <column name="CountryState" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="City" type="string" length="50" not-null="false">
+      <column name="City" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="ZipCode" type="string" length="50" not-null="false">
+      <column name="ZipCode" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="ContactPerson" type="string" length="50" not-null="false">
+      <column name="ContactPerson" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="ContactPhone" type="string" length="50" not-null="false">
+      <column name="ContactPhone" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    <property name="ContactEmail" type="string" length="50" not-null="false">
+      <column name="ContactEmail" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+    
+    <property name="ContactFax" type="string" length="50" not-null="false">
+      <column name="ContactFax" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="CategoryId" type="int" not-null="false">
+      <column name="CategoryId" not-null="false" sql-type="int" />
+    </property>
+    <property name="NationId" type="int" not-null="false">
+      <column name="NationId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="CategoryText" type="string" >
+      <column name="CategoryText" sql-type="nvarchar" />
+    </property>
+
+    <property name="NationText" type="string">
+      <column name="NationText" sql-type="nvarchar" />
+    </property>
+
+    <property name="AllowTakeOut" type="bool" not-null="false">
+      <column name="AllowTakeOut" not-null="false" sql-type="bit" length="1" />
+    </property>
+    <property name="AllowReserve" type="bool" not-null="false">
+      <column name="AllowReserve" not-null="false" sql-type="bit" length="1" />
+    </property>
+    <property name="AllowBringWine" type="bool" not-null="false">
+      <column name="AllowBringWine" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="DayStartTime" type="DateTime" not-null="false">
+      <column name="DayStartTime" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="DayEndTime" type="DateTime" not-null="false">
+      <column name="DayEndTime" not-null="false" sql-type="datetime" />
+    </property>
+    <property name="Grade" type="decimal" not-null="false">
+      <column name="Grade" not-null="false" sql-type="decimal"  />
+    </property>
+    <property name="Logo" column="Logo" length="2147483647" />
+    <property name="Website" type="string" length="200" not-null="false">
+      <column name="Website" not-null="false" sql-type="nvarchar" length="200" />
+    </property>
+
+    <property name="Rating" type="decimal" not-null="false">
+      <column name="Rating" not-null="false" sql-type="decimal"  />
+    </property>
+    <property name="NumberOfRatings" type="int" not-null="false">
+      <column name="NumberOfRatings" not-null="false" sql-type="int" />
+    </property>
+    <property name="ProductCatalogId" type="int" not-null="false">
+      <column name="ProductCatalogId" not-null="false" sql-type="int" />
+    </property>    
+  </class>
+</hibernate-mapping>

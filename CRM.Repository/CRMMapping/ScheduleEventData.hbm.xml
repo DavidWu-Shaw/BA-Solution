@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="ScheduleEventData" table="tblScheduleEvent">
+    <id name="Id" column="ScheduleEventId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Name" type="string" length="100" not-null="true">
+      <column name="Name" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="ScheduledTime" type="DateTime" not-null="true">
+      <column name="ScheduledTime" not-null="true" sql-type="datetime" />
+    </property>
+
+    <property name="ObjectId" type="int" not-null="false">
+      <column name="ObjectId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ObjectTypeId" type="int" not-null="false">
+      <column name="ObjectTypeId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="ReccuringTypeId" type="int" not-null="false">
+      <column name="ReccuringTypeId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="StartDate" type="DateTime" not-null="true">
+      <column name="StartDate" not-null="true" sql-type="datetime" />
+    </property>
+
+    <property name="EndDate" type="DateTime" not-null="false">
+      <column name="EndDate" not-null="false" sql-type="datetime" />
+    </property>
+
+  </class>
+</hibernate-mapping>

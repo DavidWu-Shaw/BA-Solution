@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CRM.Data" namespace="CRM.Data">
+  <class name="TopicData" table="tblTopic">
+    <id name="Id" column="TopicId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Title" type="string" length="200" not-null="true">
+      <column name="Title" not-null="true" sql-type="nvarchar" length="200" />
+    </property>
+
+    <property name="ForumId" type="int" not-null="false">
+      <column name="ForumId" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IssuedById" type="int" not-null="false">
+      <column name="IssuedById" not-null="false" sql-type="int" />
+    </property>
+
+    <property name="IssuedTime" type="DateTime" not-null="false">
+      <column name="IssuedTime" not-null="false" sql-type="datetime" />
+    </property>
+
+    <property name="IsSticky" type="bool" not-null="false">
+      <column name="IsSticky" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="DenyReply" type="bool" not-null="false">
+      <column name="DenyReply" not-null="false" sql-type="bit" length="1" />
+    </property>
+
+    <property name="NumberOfVisits" type="int" not-null="false">
+      <column name="NumberOfVisits" not-null="false" sql-type="int" />
+    </property>
+
+  </class>
+</hibernate-mapping>

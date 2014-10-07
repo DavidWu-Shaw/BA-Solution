@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="PA.Data" namespace="PA.Data">
+  <class name="UserData" table="tblUser">
+    <id name="Id" column="UserId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="Username" type="string" length="100" not-null="true">
+      <column name="Username" not-null="true" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Password" type="string" length="100" not-null="false">
+      <column name="Password" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="Email" type="string" length="100" not-null="false">
+      <column name="Email" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="FullName" type="string" length="100" not-null="false">
+      <column name="FullName" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <property name="DomainId" type="int" not-null="false">
+      <column name="DomainId" not-null="false" sql-type="int" length="4" />
+    </property>
+
+    <property name="StatusId" column="StatusId" />
+    <property name="CreateDate" column="CreateDate" />
+    <property name="UpdateDate" column="UpdateDate" />
+
+    <property name="MenuSettingId" column="MenuSettingId" />
+
+    <property name="UserLanguage" column="UserLanguage" />
+
+    <property name="Theme" column="Theme" />
+
+    <property name="IsBuiltInUser" column="IsBuiltInUser" />
+
+    <property name="IsActive" column="IsActive" />
+
+    <property name="LanguageId" column="LanguageId" />
+
+    <property name="CalendarId" column="CalendarId" />
+
+  </class>
+</hibernate-mapping>

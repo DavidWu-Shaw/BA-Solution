@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="SubjectEngine.Data" namespace="SubjectEngine.Data">
+  <class name="SubjectLanguageData" table="tblSubjectLanguage">
+    <id name="Id" column="SubjectLanguageId" type="int">
+      <generator class="identity" />
+    </id>
+
+    <property name="LanguageId" type="int" not-null="true">
+      <column name="LanguageId" not-null="true" sql-type="int" />
+    </property>
+
+    <property name="SubjectLabel" type="string" length="50" not-null="false">
+      <column name="SubjectLabel" not-null="false" sql-type="nvarchar" length="50" />
+    </property>
+
+    <property name="Description" type="string" length="100" not-null="false">
+      <column name="Description" not-null="false" sql-type="nvarchar" length="100" />
+    </property>
+
+    <many-to-one name="Parent" class="SubjectData" column="SubjectId" not-null="true"/>
+  </class>
+</hibernate-mapping>
